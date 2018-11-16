@@ -18,8 +18,8 @@ We will be analyzing the metaviriome data collected from the Tara Oceans Project
 
 The dataset for the analysis was chosen by following the steps below:
 
-| Step | Description | Image |
-|---|---|---|
+| Step | Description |
+|---|---|
 | 1. | Check boxes for both Viral/Bacterial Samples | !(Step_1.JPG) 
 | 2. | hkaur112 |
 | 3. | hkaur112 |
