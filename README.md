@@ -22,41 +22,42 @@ The dataset for the analysis was chosen by following the steps below:
 
 Check boxes for both Viral/Bacterial Samples
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_1.JPG)
-
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_1.JPG" width="400">
 
 ### Step 2
 
 Check boxes all for Sample Types
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_2.JPG)
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_2.JPG" width="400">
 
 
 ### Step 3
 
 Check boxes all for Depth 
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_3.JPG)
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_3.JPG" width="400">
 
 
 ### Step 4
 
 Select all the nine pathways from the dropdown
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_4.JPG)
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_4.JPG" width="400">
 
 
 ### Step 5
 
 Select all the fourteen regions from the dropdown
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_5.JPG)
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_5.JPG" width="400">
+
 
 ### Step 6
 
 Select all the nine pathways from the dropdown
 
-![](/Data/Proposal_Data_Download_Steps_Images/Step_4.JPG)
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_6.JPG" width="400">
+
 
 
 Question: Does the average amount of viral and bacterial DNA from the ocean differ across 9 different biological pathways they are involved in and across five different depths?
