@@ -1,4 +1,4 @@
-# tara-cyc-analysis
+# Viral Voyager: Ocean Viral DNA analysis
 522 lab 1 project
 
 Question: Does the average amount of viral and bacterial DNA from the ocean differ across 9 different biological pathways they are involved in and across five different depths?
