@@ -55,33 +55,33 @@ Select all the fourteen regions from the dropdown
 
 ### Step 6
 
-Select all the nine pathways from the dropdown
+Select the RKPM range from 0-16000
 
-<img src="/Data/Proposal_Data_Download_Steps_Images/Step_6.JPG" width="400">
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_6.jpg" width="400">
 
 
 ### Step 7
 
-Select the RKPM range from 0-16000
+Scroll down and click on Table View
 
-<img src="/Data/Proposal_Data_Download_Steps_Images/Step_7.JPG" width="400">
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_7.jpg" width="400">
 
 
 ### Step 8
 
 Scroll down to see samples and select the ones required for analysis (we have selected all)
 
-<img src="/Data/Proposal_Data_Download_Steps_Images/Step_8_i.JPG" width="400">
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_8_i.JPG" width="800">
 
 
-<img src="/Data/Proposal_Data_Download_Steps_Images/Step_8_ii.JPG" width="400">
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_8_ii.JPG" width="800">
 
 
 ### Step 9
 
 Click on Download Selection to get the data in .txt format
 
-<img src="/Data/Proposal_Data_Download_Steps_Images/Step_9.JPG" width="400">
+<img src="/Data/Proposal_Data_Download_Steps_Images/Step_9.JPG" width="200">
 
 For ease of analysis reproducibility a snapshot of the data is available in the Data Repository.
 
