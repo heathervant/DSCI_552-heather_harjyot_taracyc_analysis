@@ -18,14 +18,20 @@ We will be analyzing the metaviriome data collected from the Tara Oceans Project
 
 The dataset for the analysis was chosen by following the steps below:
 
-| Step | Description |
-|---|---|
-| 1. | Check boxes for both Viral/Bacterial Samples | !(Step_1.JPG) 
-| 2. | hkaur112 |
-| 3. | hkaur112 |
-| 4. | hkaur112 |
-| 5. | hkaur112 |
-| 6. | hkaur112 |
+### Step 1
+
+Check boxes for both Viral/Bacterial Samples
+
+![](/Data/Proposal_Data_Download_Steps_Images/Step_1.JPG)
+
+### Step 2
+
+Check boxes for all Sample Types
+
+![](/Data/Proposal_Data_Download_Steps_Images/Step_2.JPG)
+
+
+
 
 
 Question: Does the average amount of viral and bacterial DNA from the ocean differ across 9 different biological pathways they are involved in and across five different depths?
