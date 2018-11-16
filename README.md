@@ -2,8 +2,8 @@
 ## DSCI 522 Proposal
 -----------------------------------------------------------------------------------
 
-
 Team Information
+
 | Name | CWL |
 |---|---|
 | Harjyot Kaur | hkaur112 |
@@ -14,13 +14,13 @@ Team Information
 -----------------------------------------------------------------------------------
 
 ## Dataset 
-We will be analyzing the metaviriome data collected from the Tara Oceans Project. The Tara Oceans Project collected water samples data worldwide for shotgun metagenomic sequencing, and this data was then mapped to metabolomic pathways. This is a real-world data project, users can play, explore, and download the genome dataset from (Taracyc's R Shiny App)![http://oganm.com/shiny/taracyc/]
+We will be analyzing the metaviriome data collected from the Tara Oceans Project. The Tara Oceans Project collected water samples data worldwide for shotgun metagenomic sequencing, and this data was then mapped to metabolomic pathways. This is a real-world data project, users can play, explore, and download the genome dataset from [Taracyc's R Shiny App](http://oganm.com/shiny/taracyc/)
 
 The dataset for the analysis was chosen by following the steps below:
 
 | Step | Description | Image |
 |---|---|---|
-| 1. | Check boxes for both Viral/Bacterial Samples | ![Step1.JPG] 
+| 1. | Check boxes for both Viral/Bacterial Samples | !(Step_1.JPG) 
 | 2. | hkaur112 |
 | 3. | hkaur112 |
 | 4. | hkaur112 |
