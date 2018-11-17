@@ -1,4 +1,4 @@
-## Propoal - DSCI 522 Data Science Workflows
+## Proposal - DSCI 522 Data Science Workflows
 
 
 Team Information
@@ -19,7 +19,7 @@ Team Information
 
 We will be analyzing the metaviriome data collected from the Tara Oceans Project. The Tara Oceans Project collected water samples data worldwide for shotgun metagenomic sequencing, and this data was then mapped to metabolomic pathways. This is a real-world dataset, users can play, explore, and download the genome dataset from [Taracyc's R Shiny App](http://oganm.com/shiny/taracyc/)
 
-Downloading data from the R Shiny App is a nine-step manual process. For ease and reproducibility of the analysis, a data repository has [Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis) has been created to store the raw master data. Since the data is too large, we used [Github Large File Storage](https://git-lfs.github.com/). Further, the steps followed for downloading the data have also been outlined in the repository.
+Downloading data from the R Shiny App is a nine-step manual process. For ease and reproducibility of the analysis, a data repository has [Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis) has been created to store the raw master data. Since the data is too large, we used [Github Large File Storage](https://git-lfs.github.com/). Further, the steps followed for downloading the data have also been outlined in this repository.
 
 #### Data Load in R
 
@@ -38,11 +38,11 @@ Data Import Output:
 
 ## Research Question
 
-Does the average abundance of viral DNA sequence differ across biological pathways? Does the average abundance of viral DNA sequence differ across ocean depths? Does the average abundance of viral DNA sequence of biological pathways differ across ocean depths?
+Does the average abundance of viral DNA sequence differ across biological pathways? Does the average abundance of viral DNA sequences differ across ocean depths? Does the average abundance of viral DNA sequences of each of the 9 biological pathways differ across ocean depths?
 
 #### Type of Question
 
-This is an inferential question, as we are using a dataset that has ~300 ocean samples taken from all over the world, to conclude about ocean's viral populations.
+This is an inferential question, as we are using a dataset that has ~300 ocean samples taken from all over the world, to make conclusions about the ocean's viral population.
 
 <br>
 
