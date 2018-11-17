@@ -1,7 +1,5 @@
------------------------------------------------------------------------------------
-## DSCI 522 Proposal
------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 Team Information
 
 | Name | CWL |
@@ -69,9 +67,17 @@ We will start with validating if the data meets the assumptions for a Two-Way AN
 * Homogeneity of variances (among the groups should be approximately equal). *We will be using either Levene's test or Brown & Forsythe's test*
 
 If none of the assumptions are being violated, we will set up our hypothesis.
+=======
+# Viral Voyager: Ocean Viral DNA analysis
+522 lab 1 project
+
+Question: Does the average amount of viral and bacterial DNA from the ocean differ across 9 different biological pathways they are involved in and across five different depths?
+This is an inferential question, as we are using a dataset that has 300 ocean samples taken from all over the world, and we are making an inference about the ocean's viral and bacterial populations.
+>>>>>>> 57b4ed1c3cf97226b4cba07edf6a8a042a726347
 
 Testing Main Effects:
 
+<<<<<<< HEAD
 *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across biological pathways
 *Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence
 
@@ -84,8 +90,19 @@ Testing Interaction Effect:
 *Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence.
 
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
+=======
+We got the dataset from the taracyc ocean project, and the data is publically acessible on this website http://oganm.com/shiny/taracyc/
 
+## Plan of Action
+>>>>>>> 57b4ed1c3cf97226b4cba07edf6a8a042a726347
 
-## Reporting Results
+We will be doing a hypothesis test using a 2-way ANOVA, with the following hypotheses.
 
+$Ho=$ The mean DNA abundance levels are the same for each depth and pathway.
+$Ha=$  The mean DNA abundance levels are not the same for each depth and pathway.
+
+<<<<<<< HEAD
 We will summarize results of the analysis outlined above using tables, illustrating the statistics computed for the set of hypothesis tests. To showcase the impact of interaction effects of the two factors (biological pathways and ocean depths) visually, we will be using a combination of error bar (confidence intervals of mean abundance of viral DNA sequence) and jitter plots (sample spread) and faceting it on one factor.
+=======
+We will be showcasing the results of our hypothesis test in a table with the mean values for each group, and the MSerror, SSerror, alpha, and the F-statistic. We may also show some visual plots of the analysis with box plots and jitter for each category.
+>>>>>>> 57b4ed1c3cf97226b4cba07edf6a8a042a726347
