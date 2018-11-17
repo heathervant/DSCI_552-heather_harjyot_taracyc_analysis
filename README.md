@@ -12,8 +12,8 @@ We got the dataset from the taracyc ocean project, and the data is publically ac
 
 We will be doing a hypothesis test using a 2-way ANOVA, with the following hypotheses.
 
-$Ho=$ The mean DNA abundance levels are the same for each depth and pathway.
-$Ha=$  The mean DNA abundance levels are not the same for each depth and pathway.
+Null hypothesis= The mean DNA abundance levels (RPKM values) are the same for each depth and pathway.
+Alternate Hypothesis= The mean DNA abundance levels are not the same for each depth and pathway.
 
 We will be showcasing the results of our hypothesis test in a table with the mean values for each group, and the MSerror, SSerror, alpha, and the F-statistic. We may also show some visual plots of the analysis with box plots and jitter for each category.
 
