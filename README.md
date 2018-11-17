@@ -66,7 +66,7 @@ __Data Wrangling and Exploratory Data Analysis__
 The variables of interest for this analysis are, abundance of viral DNA sequences (dependent variable), biological pathways and ocean depth levels (independent variables). We will explore these variables individually.
 We will check for missing values, outliers and explore descriptive statistics for each variable of interest. We will also, visualize the mean abundance of viral DNA sequences across different biological pathways and  ocean depth levels using a heatmap.
 
-__Hypothesis Testing__
+__Hypothesis Testing__              
 
 Two-Way ANOVA has certain assumptions that should not be violated. We will start with validating the following assumptions:
 * Dependent variable should be measured at the continuous level
