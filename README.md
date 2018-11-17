@@ -18,6 +18,7 @@ We will be analyzing the metaviriome data collected from the Tara Oceans Project
 Downloading data from the R Shiny App is a nine-step manual process. For ease and reproducibility of the analysis, the master table downloaded has been stored in the repository [Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis/blob/master/README.md) by using Github Large File Storage. The steps followed for data download have been outlined in the repository.
 
 <br>
+
 #### Data Load in R
 
 ![](/img/Data_Load.PNG)
@@ -38,7 +39,8 @@ Does the average abundance of viral DNA sequence differ across biological pathwa
 #### Type of Question
 
 This is an inferential question, as we are using a dataset that has ~300 ocean samples taken from all over the world, to conclude about ocean's viral populations.
-
+<br>
+<br>
 
 ## Plan of Action
 
@@ -49,17 +51,19 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depths |
-
+<br>
+<br>
 
 #### Analysis Overview
 
 We intend to analyze the data using R with RStudio.
 
-
+<br>
 __Data Wrangling and Exploratory Data Analysis__
 
 The variables of interest for this analysis are the mean abundance of viral DNA sequence (dependent variable) and two independent variables namely, biological pathways and ocean depths. We will explore these variables individually.
 We will check for missing values, outliers and explore descriptive statistics for each variable of interest. We will also, visualize the mean abundance of viral DNA sequence across nine biological pathways and five depths using a heatmap.
+<br>
 
 __Data Analysis__
 
@@ -72,6 +76,7 @@ We will start with validating if the data meets the assumptions for a Two-Way AN
 * Homogeneity of variances (among the groups should be approximately equal). *We will be using either Levene's test or Brown & Forsythe's test*
 
 If none of the assumptions are being violated, we will set up our hypothesis.
+<br>
 
 * Testing Main Effects:
 
@@ -87,7 +92,7 @@ If none of the assumptions are being violated, we will set up our hypothesis.
   *Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
 
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
-
+<br>
 
 ## Summarizing Results
 
