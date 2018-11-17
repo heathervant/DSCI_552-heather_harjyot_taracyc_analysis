@@ -70,17 +70,19 @@ If none of the assumptions are being violated, we will set up our hypothesis.
 
 Testing Main Effects:
 
-*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across biological pathways
-*Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence
+*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
+*Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence   
 
-*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across ocean depths
-*Alternate Hypothesis*: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence
+*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
+*Alternate Hypothesis*: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
 
 Testing Interaction Effect:
 
-*Null Hypothesis*: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence.
-*Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence.
+*Null Hypothesis*: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
+*Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
 
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
+
+## Summarizing Results
 
 We will summarize results of the analysis outlined above using tables, illustrating the statistics computed for the set of hypothesis tests. To showcase the impact of interaction effects of the two factors (biological pathways and ocean depths) visually, we will be using a combination of error bar (confidence intervals of mean abundance of viral DNA sequence) and jitter plots (sample spread) and faceting it on one factor.
