@@ -38,7 +38,7 @@ Data Import Output:
 
 ## Research Question
 
-Does the average abundance of viral DNA sequence differ across biological pathways? Does the average abundance of viral DNA sequences differ across ocean depths? Does the average abundance of viral DNA sequences of each of the 9 biological pathways differ across ocean depths?
+Does the average abundance of viral DNA sequence differ across biological pathways? Does the average abundance of viral DNA sequences differ across ocean depths? Does the average abundance of viral DNA sequences of the biological pathways differ across ocean depths?
 
 #### Type of Question
 
