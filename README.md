@@ -29,6 +29,7 @@ Downloading data from the R Shiny App is a nine-step manual process. For ease an
 | Data Type | Categorical and Numerical |
 
 
+
 ## Research Question
 
 Does the average abundance of viral DNA sequence differ across biological pathways? Does the average abundance of viral DNA sequence differ across ocean depths? Does the average abundance of viral DNA sequence of biological pathways differ across ocean depths?
@@ -44,7 +45,7 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 
 | Variable Name | Type | Description |
 |---|---|---|
-| RKPM | Continuous | Essentially a normalized genomic abundance metric - Reads per kilobase of transcript per million mapped reads |
+| RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depths |
 
@@ -53,12 +54,13 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 
 We intend to analyze the data using R with RStudio.
 
-#### Data Wrangling and Exploratory Data Analysis
+
+__Data Wrangling and Exploratory Data Analysis__
 
 The variables of interest for this analysis are the mean abundance of viral DNA sequence (dependent variable) and two independent variables namely, biological pathways and ocean depths. We will explore these variables individually.
 We will check for missing values, outliers and explore descriptive statistics for each variable of interest. We will also, visualize the mean abundance of viral DNA sequence across nine biological pathways and five depths using a heatmap.
 
-#### Data Analysis
+__Data Analysis__
 
 We will start with validating if the data meets the assumptions for a Two-Way ANOVA. The assumptions are:
 * Dependent variable should be measured at the continuous level
@@ -70,18 +72,18 @@ We will start with validating if the data meets the assumptions for a Two-Way AN
 
 If none of the assumptions are being violated, we will set up our hypothesis.
 
-Testing Main Effects:
+* Testing Main Effects:
 
-__Null Hypothesis__: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
-__Alternate Hypothesis__: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence   
+Null Hypothesis: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
+Alternate Hypothesis: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence   
 
-__Null Hypothesis__: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
-__Alternate Hypothesis__: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
+Null Hypothesis: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
+Alternate Hypothesis: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
 
-Testing Interaction Effect:
+* Testing Interaction Effect:
 
-__Null Hypothesis__: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
-__Alternate Hypothesis__: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
+Null Hypothesis: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
+Alternate Hypothesis: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
 
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
 
