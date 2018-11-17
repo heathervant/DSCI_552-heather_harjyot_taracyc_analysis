@@ -16,5 +16,3 @@ $Ho=$ The mean DNA abundance levels are the same for each depth and pathway.
 $Ha=$  The mean DNA abundance levels are not the same for each depth and pathway.
 
 We will be showcasing the results of our hypothesis test in a table with the mean values for each group, and the MSerror, SSerror, alpha, and the F-statistic. We may also show some visual plots of the analysis with box plots and jitter for each category.
-
-
