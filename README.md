@@ -82,20 +82,20 @@ __Testing Main Effects__:
 
 * Factor 1: Biological Pathways
 
-   $H_o$: There is no difference in the mean abundance of viral DNA sequences across biological pathways    
-   $H_A$: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequences
+   H<sub>0</sub>: There is no difference in the mean abundance of viral DNA sequences across biological pathways    
+   H<sub>A</sub>: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequences
 
 * Factor 2: Ocean Depth
 
-  Null Hypothesis: There is no difference in the mean abundance of viral DNA sequences across ocean depth levels
-  Alternate Hypothesis: At least two of ocean depth levels differ in terms of mean abundance of viral DNA sequences   
+  H<sub>0</sub>: There is no difference in the mean abundance of viral DNA sequences across ocean depth levels
+  H<sub>A</sub>: At least two of ocean depth levels differ in terms of mean abundance of viral DNA sequences   
 
 __Testing Interaction Effect__:
 
 * Factors: Biological Pathways & Ocean Depth
 
-  Null Hypothesis : There is no significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences  
-  Alternate Hypothesis : There is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences
+  H<sub>0</sub>: There is no significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences  
+  H<sub>A</sub>: There is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences
 
 We will be checking the above three set of hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics computed we will then observe whether we reject or fail to reject the null hypothesis.
 
