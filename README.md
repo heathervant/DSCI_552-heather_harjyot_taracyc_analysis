@@ -83,11 +83,11 @@ If none of the assumptions are being violated, we will set up our hypothesis.
 
 __Testing Main Effects__:
 
-  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
+  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence across biological pathways    
   *Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence 
   
   
-  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
+  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence across ocean depths    
   *Alternate Hypothesis*: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
   
 __Testing Interaction Effect__:
@@ -101,5 +101,6 @@ We will be checking the above three hypothesis at  5% Level of Significance. Fur
 
 
 ## Summarizing Results
+=======
 
 We will summarize results of the analysis outlined above using tables, illustrating the statistics computed for the set of hypothesis tests. To showcase the impact of interaction effects of the two factors (biological pathways and ocean depths) visually, we will be using a combination of error bar (confidence intervals of mean abundance of viral DNA sequence) and jitter plots (sample spread) and faceting it on one factor.
