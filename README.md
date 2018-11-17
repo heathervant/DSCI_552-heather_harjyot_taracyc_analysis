@@ -53,11 +53,13 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 
 We intend to analyze the data using R with RStudio.
 
-__Data Wrangling and Exploratory Data Analysis__
+#### Data Wrangling and Exploratory Data Analysis
+
 The variables of interest for this analysis are the mean abundance of viral DNA sequence (dependent variable) and two independent variables namely, biological pathways and ocean depths. We will explore these variables individually.
 We will check for missing values, outliers and explore descriptive statistics for each variable of interest. We will also, visualize the mean abundance of viral DNA sequence across nine biological pathways and five depths using a heatmap.
 
-__Data Analysis__
+#### Data Analysis
+
 We will start with validating if the data meets the assumptions for a Two-Way ANOVA. The assumptions are:
 * Dependent variable should be measured at the continuous level
 * Two independent variables should each consist of two or more categorical, independent groups.
@@ -70,16 +72,16 @@ If none of the assumptions are being violated, we will set up our hypothesis.
 
 Testing Main Effects:
 
-*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
-*Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence   
+__Null Hypothesis__: There is no difference in the mean abundance of viral DNA sequence is across biological pathways    
+__Alternate Hypothesis__: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence   
 
-*Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
-*Alternate Hypothesis*: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
+__Null Hypothesis__: There is no difference in the mean abundance of viral DNA sequence is across ocean depths    
+__Alternate Hypothesis__: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
 
 Testing Interaction Effect:
 
-*Null Hypothesis*: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
-*Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
+__Null Hypothesis__: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
+__Alternate Hypothesis__: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence   
 
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
 
