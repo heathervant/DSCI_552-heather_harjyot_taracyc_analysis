@@ -22,6 +22,9 @@ Downloading data from the R Shiny App is a nine-step manual process. For ease an
 
 #### Data Load in R
 
+Data Import script is present in the src directory: [Script](https://github.com/HarjyotKaur/DSCI_522_heather_harjyot_taracyc_analysis/blob/master/src/data_load.R)
+
+Data Import Output:
 ![](/img/Data_Load.PNG)
 
 | Dataset Features | |
@@ -51,7 +54,7 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depths |
-<br>
+
 
 #### Analysis Overview
 
