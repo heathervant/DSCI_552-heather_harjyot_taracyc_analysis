@@ -30,6 +30,7 @@ Downloading data from the R Shiny App is a nine-step manual process. For ease an
 | Variables | 21 |
 | Data Type | Categorical and Numerical |
 
+<br>
 
 ## Research Question
 
@@ -38,6 +39,8 @@ Does the average abundance of viral DNA sequence differ across biological pathwa
 #### Type of Question
 
 This is an inferential question, as we are using a dataset that has ~300 ocean samples taken from all over the world, to conclude about ocean's viral populations.
+
+<br>
 
 ## Plan of Action
 
@@ -48,8 +51,6 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depths |
-
-
 
 #### Analysis Overview
 
@@ -74,19 +75,26 @@ If none of the assumptions are being violated, we will set up our hypothesis.
 
 __Testing Main Effects__:
 
-  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence across biological pathways    
-  *Alternate Hypothesis*: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence 
-  
-  
-  *Null Hypothesis*: There is no difference in the mean abundance of viral DNA sequence across ocean depths    
-  *Alternate Hypothesis*: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
+* Factor 1: Biological Pathways
+
+   Null Hypothesis: There is no difference in the mean abundance of viral DNA sequence across biological pathways    
+   Alternate Hypothesis: At least two of the biological pathways differ in terms of mean abundance of viral DNA sequence
+   
+* Factor 2: Ocean Depth
+
+  Null Hypothesis: There is no difference in the mean abundance of viral DNA sequence across ocean depths    
+  Alternate Hypothesis: At least two ocean depth levels differ in terms of mean abundance of viral DNA sequence   
   
 __Testing Interaction Effect__:
 
-  *Null Hypothesis*: There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
-  *Alternate Hypothesis*: There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence
+* Factors: Biological Pathways & Ocean Depth
+ 
+  Null Hypothesis : There is no significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence  
+  Alternate Hypothesis : There is a significant interaction between biological pathways and ocean depths in terms of mean abundance of viral DNA sequence
  
 We will be checking the above three hypothesis at  5% Level of Significance. Further, we will compute the F-Statistic for testing each set of hypothesis. Based on the statistics we will then observe whether we reject the null hypothesis or we fail to reject it.
+
+<br>
 
 
 ## Summarizing Results
