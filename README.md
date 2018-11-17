@@ -51,6 +51,7 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depths |
+<br>
 
 #### Analysis Overview
 
