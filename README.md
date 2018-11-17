@@ -18,7 +18,7 @@ Team Information
 
 We will be analyzing the metaviriome data collected from the Tara Oceans Project. The Tara Oceans Project collected water samples data worldwide for shotgun metagenomic sequencing, and this data was then mapped to metabolomic pathways. This is a real-world dataset, users can play, explore, and download the genome dataset from [Taracyc's R Shiny App](http://oganm.com/shiny/taracyc/)
 
-Downloading data from the R Shiny App is a nine-step manual process. For ease and reproducibility of the analysis, the master table downloaded has been stored in the repository [Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis) by using [Github Large File Storage](https://git-lfs.github.com/). The steps followed for data download have been outlined in the repository.
+Downloading data from the R Shiny App is a nine-step manual process. For ease and reproducibility of the analysis, a data repository has[Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis) has been created to store the raw master data. Since the data is too large, we used [Github Large File Storage](https://git-lfs.github.com/). Further, the steps followed for downloading teh data have also been outlined in the repository.
 
 #### Data Load in R
 
