@@ -57,7 +57,7 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | Depth | Categorical |  Levels of ocean depth |
 
 
-#### Analysis Overview
+### Analysis Overview
 
 We intend to analyze the data using R with RStudio.
 
