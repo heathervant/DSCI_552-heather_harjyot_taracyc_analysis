@@ -104,4 +104,4 @@ We will be checking the above three set of hypothesis at  5% Level of Significan
 
 ## Summarizing Results
 
-We will summarize results of the analysis outlined above using tables, illustrating the statistics computed for the set of hypothesis. To showcase the impact of interaction effects of the two factors (biological pathways and ocean depth levels) visually, we will be using a combination of error bar (confidence intervals of mean abundance of viral DNA sequences) and jitter plots (sample spread) and faceting it on one factor to produce a series of plot for comparison.
+We will summarize results of the analysis outlined above using tables, illustrating the statistics computed for the set of hypotheses. To showcase the impact of the interaction effects of the two factors (biological pathways and ocean depth levels) visually, we will be using a combination of error bar (confidence intervals of mean abundance of viral DNA sequences) and jitter plots (sample spread) and faceting it on one factor to produce a series of plots for comparison.
