@@ -14,6 +14,7 @@ Team Information
 -----------------------------------------------------------------------------------
 
 <br>
+
 ## Bacteria help sequester carbon in the ocean
 
 One of the most promising places to sequester carbon is in the oceans, which currently take up a third of the carbon emitted by human activity, roughly two billion metric tons each year. The ocean plays a vital dominant role in oxygen production, weather patterns, climate and the global carbon cycle. It is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. Most dark ocean carbon is captured in the mesopelagic zone, which lies between 200 and 1000 meters below the ocean surface.
