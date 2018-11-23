@@ -1,23 +1,35 @@
 # data_load.R
-
-# Harjyot and Heather, 17 Nov 2018
-
-# Tara Oceans Project: Master Table
+# Harjyot and Heather, Nov 2018
+# Taracyc Ocean Virus Analysis  
 
 
 
 # This script loads the dataset from a url
+# This script takes two arguments, the link for reading data and 
+# output file path for storing the data loaded.
 
-# This script takes no arguments.
-
-#
 
 # Usage: Rscript data_load.R
 
 
-# Read in data
 
 
-master_data <- read.delim("https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt")
 
-head(master_data)
+# Read in command line arguments
+args <- commandArgs(trailingOnly = TRUE)
+link <- args[1]
+output <- args[2]
+
+# define main function
+main <- function() {
+  
+  # Read in data
+  master_data <- read.delim(link)
+  
+
+  write.csv(master_data, file = output)
+  
+}
+
+# call main function
+main()
