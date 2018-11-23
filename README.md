@@ -5,8 +5,8 @@ Team Information
 
 | Name | CWL |
 |---|---|
-| Harjyot Kaur | hkaur112 |
-| Heather Van Tassel | hvan |
+| Harjyot Kaur | [HarjyotKaue](https://github.com/HarjyotKaur) |
+| Heather Van Tassel | [heathervant](https://github.com/heathervant) |
 
 
 -----------------------------------------------------------------------------------
@@ -14,6 +14,16 @@ Team Information
 -----------------------------------------------------------------------------------
 
 <br>
+
+## Bacteria help sequester carbon in the ocean
+
+One of the most promising places to sequester carbon is in the oceans, which currently take up a third of the carbon emitted by human activity, roughly two billion metric tons each year. The ocean plays a vital dominant role in oxygen production, weather patterns, climate and the global carbon cycle. It is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. Most dark ocean carbon is captured in the mesopelagic zone, which lies between 200 and 1000 meters below the ocean surface.
+
+##  How do viruses affect the bacteria?
+Viruses can infect bacteria and alter their chance of survival. For example, when a bacterial cell is infected and decides to kill itself by turning off its production of photosysthesis proteins, a virus can infect this bacterial cell and use it's own viral DNA to turn the photosysythesis system back on to promote cell survival. Thus, viruses can influence bacterial cell survival quite easily. 
+
+## Motivation for research
+To further explore the populations of bacteria and viruses in the oceans, researchers set out to collect 300 water samples from all over the world's oceans at various depths. These samples were filtered for viral and bacterial DNA. By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria. The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs accross biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
 
 ## Dataset
 
