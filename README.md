@@ -5,8 +5,8 @@ Team Information
 
 | Name | CWL |
 |---|---|
-| Harjyot Kaur | hkaur112 |
-| Heather Van Tassel | hvan |
+| Harjyot Kaur | [HarjyotKaue](https://github.com/HarjyotKaur) |
+| Heather Van Tassel | [heathervant](https://github.com/heathervant) |
 
 
 -----------------------------------------------------------------------------------
