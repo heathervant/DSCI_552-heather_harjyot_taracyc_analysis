@@ -18,7 +18,7 @@ Team Information
 
 One of the most promising places to sequester carbon is in the oceans, which currently take up a third of the carbon emitted by human activity, roughly two billion metric tons each year. The ocean plays a vital dominant role in oxygen production, weather patterns, climate and the global carbon cycle. It is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. Most dark ocean carbon is captured in the mesopelagic zone, which lies between 200 and 1000 meters below the ocean surface.
 
-## How do viruses affect the bacteria?
+##  How do viruses affect the bacteria?
 Viruses can infect bacteria and alter their chance of survival. For example, when a bacterial cell is infected and decides to kill itself by turning off its production of photosysthesis proteins, a virus can infect this bacterial cell and use it's own viral DNA to turn the photosysythesis system back on to promote cell survival. Thus, viruses can influence bacterial cell survival quite easily. 
 
 ## Motivation for research
