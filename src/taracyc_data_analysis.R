@@ -10,9 +10,9 @@
 # Usage: Rscript src/taracyc_data_analysis.R data/taracyc_data_cleaned.csv results/taracyc_results.csv
 
 #Load Librarries
- library(tidyverse)
- library(car)
- library(ggpubr)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(car))
+suppressPackageStartupMessages(library(ggpubr))
 
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)

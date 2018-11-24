@@ -11,7 +11,10 @@
 # stored in the figures folder within the results folder
 
 
-# Usage: Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/meanRPKM_figure.png 
+# Usage: Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/fig7_results.png 
+
+#Load Librarries
+suppressPackageStartupMessages(library(tidyverse))
 
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
@@ -22,37 +25,44 @@ output <- args[2]
 # define main function
 main <- function() {
   
-  #load packages 
-  library(tidyverse)
-  library(car)
-  library(ggpubr)
   
   #Read data
   wrangled_data <- read.csv(input)
   
   #set alpha to 0.05
   alpha = 0.05
-  #create plots with means and errorbars
-  depth_plot <- wrangled_data %>%
-    #group by pathway name and depth
+  
+  #create plots with means and confidence intervals
+  results <- wrangled_data %>%
     group_by(LEVEL1, DEPTH) %>% 
-    #calculate mean RPKM values and the standard error
     summarize(mean_RPKM = mean(RPKM),
-              se        = sd(RPKM)/sqrt(length(RPKM))) %>%
-    #plot mean RPKM values with errorbars for each pathway and facet by depth
+              se= sd(RPKM)/sqrt(length(RPKM))) %>%
     ggplot(aes(x = LEVEL1)) +
-    geom_point(aes(y = mean_RPKM), colour = "red") +
-    facet_wrap(~DEPTH) +
-    # use 95% confidence intervals to create errorbars
+    geom_point(aes(y = mean_RPKM),color="red") +
+    facet_wrap(~DEPTH,ncol=1) +
     geom_errorbar(aes(ymin = mean_RPKM + qnorm(alpha/2)*se,
                       ymax = mean_RPKM - qnorm(alpha/2)*se),
                   colour = "red",
                   width  = 0.2) +
-    theme_bw() +
-    labs(x = "Biological Pathway", y = "DNA Abundance (RPKM)") +
-    theme(axis.text.x=element_text(angle=90,hjust=1)) +
-    ggtitle("Mean DNA abundance accross depths and pathways")
+    labs(x="Biological Pathways",
+         y=expression(paste(
+           "Reads Per Kilobase Meter (",
+           log[10],
+           " RPKM)", sep=" ")),
+         caption="\n
+         The Viral DNA Sequences interact in five metabolomic pathways namely, 
+         Metabolic-Clusters, Energy-Metabolsim, Detoxification, Degradation and Biosynthesis a
+         nd are found at four different depths, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic),
+         MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer).")+
+    theme_classic()+
+    theme(aspect.ratio = .1)+
+    theme(plot.title = element_text(hjust = 0.5),
+          plot.caption=element_text(hjust = 0.5))
+    
   
+  # Saving plot
+  suppressMessages(
+    ggsave(filename=output,plot=results,height=5))
 }
 
 # call main function
