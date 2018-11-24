@@ -8,4 +8,8 @@ Downloading data from the R Shiny App is a nine-step manual process. For ease an
 
 #### Data Load in R
 
-![](/img/Data_Load.PNG)
+```{R load data}
+master_data <- read.delim("https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt")
+
+head(master_data)
+```
