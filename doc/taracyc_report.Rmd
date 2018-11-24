@@ -8,7 +8,7 @@ output: github_document
 # Summary Report
 # Taracyc Ocean Virus Analysis  
 
-# Introduction
+## Introduction
 
 The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival.<sup>1</sup> 
 
@@ -16,11 +16,11 @@ The ocean is full of mysteries, and plays an important role in oxygen production
 
 To further explore the populations of bacteria and viruses in the oceans, project was led by the TARA oceans <sup>1</sup> collected 300 water samples from all over the world's oceans at various depths. These samples were filtered for viral and bacterial DNA. By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria. The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs across biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
 
-# Research Question
+## Research Question
 
 Does the mean abundance of viral DNA sequences differ across biological pathways? Does the mean abundance of viral DNA sequences differ across ocean depth levels? Does the mean abundance of viral DNA sequences of the biological pathways differ across ocean depth levels?
 
-# Data Set
+## Data Set
 
 We will be analyzing the metaviriome data collected from the [Tara Oceans Project](http://oganm.com/shiny/taracyc/). Downloading data from the R Shiny App is a nine-step manual process. Thus, a data repository [Data_Taracyc_Analysis](https://github.com/HarjyotKaur/Data_Taracyc_Analysis) has been created to store the raw master data. Since the data file is too large, we have used [Github Large File Storage](https://git-lfs.github.com/). For detailed information, of data download visit the [repository](https://github.com/HarjyotKaur/Data_Taracyc_Analysis).
 
@@ -60,7 +60,7 @@ kable(head(cleaned_data_snapshot,5))
 
 ```
 
-# Exploratory Data Analysis and Data Cleaning
+## Exploratory Data Analysis and Data Cleaning
 
 The data consists of 299 samples of ocean organism DNA sequences, to bifurcate samples containing viral and bacterial DNA. Definition for bifurcation available [here](https://github.com/hackseq/tara-cyc-hs18).
 
@@ -123,7 +123,7 @@ knitr::include_graphics('../results/figures/fig6_eda_mean_dna_across_categories.
 <br>
 The mean abundance of viral DNA sequences is highest for biological pathways that occur in surface water layer whereas the mean abundance of viral DNA sequences seems to be similar for Detoxification and Degradation across all depths. To further investigate the interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences we will perform a Two-Way ANOVA.
 
-# Analysis
+## Analysis
 
 Two-Way ANOVA has certain assumptions: 
 
@@ -141,7 +141,7 @@ Two-Way ANOVA has certain assumptions:
 
 We will be checking the above three set of hypothesis at  5% Level of Significance.
 
-# Results
+## Results
 
 ### Table 1: Two-Way ANOVA, estimates and F-Statistic
 
