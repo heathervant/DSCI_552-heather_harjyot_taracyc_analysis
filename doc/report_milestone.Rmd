@@ -69,7 +69,8 @@ head(wrangled_data,5)
 
 We used a 2-way ANOVA test to answer our research question of whether there is a difference in the  mean abundance of viral DNA sequences across biological pathways and ocean depth levels. We are aware that in order to use ANOVA, your data should meet several assumptions, and can be tested with several methods:
 
-| --- Assumption---  |--- Test--- |
+| Assumption |Test|
+|---- |--- |
 | the data are normally distributed | Levene's test, and Plot residuals and see if they are normally distributed|
 | the variance across groups must be homogeneous | ggnorm plot of standardized residuals | 
 
