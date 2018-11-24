@@ -1,15 +1,15 @@
-# data_load.R
+# taracyc_data_load.R
+
 # Harjyot and Heather, Nov 2018
 # Taracyc Ocean Virus Analysis  
 
 
+# This script reads the dataset from a url
+# This script takes in two arguments, the link for reading dataset and 
+# file path for storing the data loaded.
 
-# This script loads the dataset from a url
-# This script takes two arguments, the link for reading data and 
-# output file path for storing the data loaded.
 
-
-# Usage: Rscript data_load.R
+# Rscript src/data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/data_load.csv
 
 
 
