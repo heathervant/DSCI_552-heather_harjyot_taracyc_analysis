@@ -55,7 +55,7 @@ bash run_all.sh
 
 ## Dependencies
 
-* R and R libraries
+* R and R libraries   
   `tidyverse`  
    `ggplot2`  
    `ggmap`  
