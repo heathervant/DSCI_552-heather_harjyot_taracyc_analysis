@@ -56,11 +56,11 @@ bash run_all.sh
 ## Dependencies
 
 * R and R libraries
-  `tidyverse`
-   `ggplot2`
-   `ggmap`
-   `maps`
-   `car`
-   `ggpubr`
-   `rmarkdown`
-   `knitr`
+  `tidyverse`  
+   `ggplot2`  
+   `ggmap`  
+   `maps`  
+   `car`  
+   `ggpubr`  
+   `rmarkdown`  
+   `knitr`  
