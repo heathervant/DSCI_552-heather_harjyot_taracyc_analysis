@@ -5,7 +5,7 @@
 
 # This script reads in the data from taracyc_data.csv
 # This script does an exploratory data anlysis and data wrangling to clean the data
-# This script takes 2 arguments, input and output file paths.
+# This script takes 3 arguments, input and output file paths.
 
 #
 
@@ -151,7 +151,7 @@ main <- function() {
     scale_fill_brewer(palette = "Spectral")+
     labs(x="Biological Pathways",
          y=expression(paste(
-           "Reads Per Kilobase Meter (",
+           "Reads Per Kilobase Million (",
            log[10],
            " RPKM)", sep=" ")),
          caption="\n
@@ -179,7 +179,7 @@ main <- function() {
     scale_fill_brewer(palette = "PuBuGn")+
     labs(x="Depths",
          y=expression(paste(
-           "Reads Per Kilobase Meter (",
+           "Reads Per Kilobase Million (",
            log[10],
            " RPKM)", sep=" ")),
          caption="\n
@@ -211,12 +211,12 @@ main <- function() {
     ggplot(aes(DEPTH,LEVEL1, z = RPKM)) +
     stat_summary_2d(fun = "mean")+
     scale_fill_distiller(palette="Spectral",
-                         name="Mean RPKM (Reads Per Kilobase Meter")+
+                         name="Mean RPKM (Reads Per Kilobase Millions)")+
     coord_equal() +
     labs(x="Depths",
          y="Biological Pathways",
          caption="\n
-         Figure 5:Mean Abundance of Viral DNA Sequences in 20 categories
+         Figure 5: Mean Abundance of Viral DNA Sequences in 20 categories
          Ocean depths entail, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic), 
          MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer). ")+
     theme_classic()+

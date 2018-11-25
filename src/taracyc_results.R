@@ -45,10 +45,7 @@ main <- function() {
                   colour = "red",
                   width  = 0.2) +
     labs(x="Biological Pathways",
-         y=expression(paste(
-           "Reads Per Kilobase Meter (",
-           log[10],
-           " RPKM)", sep=" ")),
+         y="Mean RPKM (Reads Per Kilobase Millions)",
          caption="\n
          Figure 6: Mean abundance of viral dna sequences for 20 groups created by interaction of two factors. 
          Viral DNA Sequences interact in five metabolomic pathways namely, Metabolic-Clusters, Energy-Metabolsim, 

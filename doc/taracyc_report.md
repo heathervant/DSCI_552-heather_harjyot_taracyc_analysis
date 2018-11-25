@@ -78,9 +78,9 @@ After, filtering the data we wanted to explore the viral DNA samples collected f
 
 <img src="../results/figures/fig3_eda_biological_pathways_depth_dna_volume.png" width="2400" />
 
-We observe that Viral DNa Sequences samples were collected from four different levels of ocean depth. Also, the samples are able to capture interaction of viral population in five pathways. Majority of samples collected are from Surface Water Layer, the sample capture maximum interaction of Viral DNA in Biosynthesis pathway.
+We observe that Viral DNA Sequences samples were collected from four different levels of ocean depth. Also, the samples are able to capture interaction of viral population in five pathways. Majority of samples collected are from Surface Water Layer, the sample capture maximum interaction of Viral DNA in Biosynthesis pathway.
 
-One of the assumptions for a Two-Way ANOVA is homogenity of variances. We performed Levene's Test to validate the same, it evaluated the p-value &lt;0.05, thus failing the test. Since, we did not have proper tools to tackle the fallout of Levene Test, we decided to look for outliers in data.
+One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We performed Levene's Test to validate the same, it evaluated the p-value &lt;0.05, thus failing the test. Since, we did not have proper tools to tackle the fallout of Levene's Test, we decided to look for outliers in data.
 
 <img src="../results/figures/fig4_eda_biological_pathways_spread_outliers.png" width="2099" />
 
@@ -88,7 +88,7 @@ One of the assumptions for a Two-Way ANOVA is homogenity of variances. We perfor
 
 <img src="../results/figures/fig5_eda_depths_spread_outliers.png" width="2099" />
 
-The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads Reads per kilobase million) values lying below the 1st percentile and lying above the 99th percentile were removed to ensure the assumption of homogenity of variances.
+The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 1st percentile and lying above the 99th percentile were removed to ensure the assumption of homogeneity of variances.
 
 After cleaning the data set we observe the mean abundance of viral DNA sequences in groups created for the two factors under consideration, biological pathways and ocean depth. The data gets grouped into 20 categories.
 
@@ -131,21 +131,21 @@ Results
 
 Table 2: Showcases results of Two-Way ANOVA, where factors are biological pathways(LEVEL1) and levels of ocean depth (DEPTH), the response variable is abundance of viral DNA (RPKM) <br> <br>
 
-Our ANOVA results are shown in the Table 2. All results have a p-value &lt; 0.05, and thus we reject our null hypothesis.There is significant difference in mean abundance of Viral DNA Sequence across biological pathways and levsl of ocean depths individually. Also, there is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences. Our findings can be visualized by the plot below. <br>
+Our ANOVA results are shown in the Table 2. All results have a p-value &lt; 0.05, and thus we reject our null hypothesis. There is significant difference in mean abundance of Viral DNA Sequence across biological pathways and levels of ocean depths individually. Also, there is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences. Our findings can be visualized by the plot below. <br>
 
 <img src="../results/figures/fig7_results.png" width="2100" />
 
-It seems that viral DNA that interact in Biological Pathways do not have overlapping condfidence intervals across all ocean depth layers. Viral DNA interacting in Degradation, Detoxification and Metabolic-Clusters have overlapping confidence intervals in Deep Chlorophyll Maximum ocean layer.
+It seems that viral DNA that interact in Biological Pathways do not have overlapping confidence intervals across all ocean depth layers. Viral DNA interacting in Degradation, Detoxification and Metabolic-Clusters have overlapping confidence intervals in Deep Chlorophyll Maximum ocean layer.
 
 Discussion
 ----------
 
-We can conclude that there is a difference in mean viral DNA accross all pathways and depths. However, when comparing interaction effects of each depth and pathway, there are a few groups that may not be significantly different, but it is hard to tell visually. With a Two-Way ANOVA, we are only able to determine whether one or more groups is significantly different than the others. Thus, even though we rejected our null hypothesis, we can not conclude which pathways are significantly different. However, to further investigate these differences, one could do a pairwise t.test or Tukey-Kramer analysis.
+We can conclude that there is a difference in mean viral DNA across all pathways and depths. However, when comparing interaction effects of each depth and pathway, there are a few groups that may not be significantly different, but it is hard to tell visually. With a Two-Way ANOVA, we are only able to determine whether one or more groups is significantly different than the others. Thus, even though we rejected our null hypothesis, we can not conclude which pathways are significantly different. However, to further investigate these differences, one could do a pairwise t-test or Tukey-Kramer analysis.
 
 Conclusion
 ----------
 
-This was a very interesting exploration of viral DNA that represents the world's ocean populations. In the future, we hope to analyze how the viral DNA might affect the abundance of bacterial DNA for each pathway. We hypothesize that the viral DNA will be correlated with the bacterial DNA, as it seems that they interact. <sup>2</sup> Additional factors could be explored, such as how the viral and DNA samples and pathways are distributed accross geographical locations. There is so much waiting to be discovered, and we are excited to see what future findings may uncover, and what implications these findings may have on how we manage and care for our oceans in the face of climate change.
+This was a very interesting exploration of viral DNA that represents the world's ocean populations. In the future, we hope to analyze how the viral DNA might affect the abundance of bacterial DNA for each pathway. We hypothesize that the viral DNA will be correlated with the bacterial DNA, as it seems that they interact. <sup>2</sup> Additional factors could be explored, such as how the viral and DNA samples and pathways are distributed across geographical locations. There is so much waiting to be discovered, and we are excited to see what future findings may uncover, and what implications these findings may have on how we manage and care for our oceans in the face of climate change.
 
 References
 ----------
