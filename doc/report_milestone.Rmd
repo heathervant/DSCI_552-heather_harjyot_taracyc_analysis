@@ -1,0 +1,143 @@
+---
+title: "report"
+author: "hvan"
+date: "November 23, 2018"
+output: html_document
+---
+
+# Summary Report
+# Taracyc Ocean Virus Analysis  
+
+## Introduction
+
+> The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration (50% of all carbon emitted by human activity is sequestered by the ocean) and global ecosystem health<sup>1</sup>. Bacteria help sequester carbon in the ocean. It is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. 
+
+##  How do viruses affect the bacteria?
+> Viruses can infect bacteria and alter their chance of survival. For example, when a bacterial cell is infected and decides to kill itself by turning off its production of photosynthesis proteins, a virus can infect this bacterial cell and use it's own viral DNA to turn the photosynthesis system back on to promote cell survival.<sup>2</sup>
+
+## Motivation for research
+>  The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs across biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
+
+
+> In 2009, a 3-year voyage around the world to collect more information about our precious oceans began. project was led by the TARA oceans project <sup>3</sup> and resulted in the collection of 300 water samples, involving over 150 Scientists who are curious about the biodiversity and distribution of micro-organisms in the oceans, as there is 90-100% more knowledge yet to be gained. Many questions motivate these researhers, especially with the rise in global temperatures. What are the risks of rising temperatures to plankton, the bacteria and the viruses? Are all these kingdoms linked and reliant on each other? In localized areas or everywhere? How many of them are there? What influence does temperature, salinity, acidity and physico-chemical parameters have on these strange creatures, and in which regions? By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria, and in turn driving carbon sequestration.
+
+> The Hallam lab at UBC has taken these genetic sequences from the viruses and bacteria and created a complex algorithm that classifies the DNA sequences into biological pathways that these genes may be involved in regulating. A team of students and researchers took this dataset and made a [shiny app](http://oganm.com/shiny/taracyc/) to help the public interact with and explore the data at the University of British Columbia's hackseq 2018 (OCtober). The link to the team's github page can be found [here](https://github.com/hackseq/tara-cyc-hs18/wiki). 
+
+> As Heather was one of the taracyc hackseq team members, we decided to use this data to explore which biological pathways might be more abundant overall, and how they varied at different ocean depths. The abundance of DNA is known as the reads per kilobase metre (RPKM) and is commonly used in this field. We however, are not experts in this field, and thus had no assumptions about what we would find. The four depths that we explored are 
+- SRF: Surface Water Layer (5m)
+- DCM: Deep Chlorophyll Maximum (17-188m)
+- MES: Mesopelagic (250-1000m)
+- MIX: active turbulence has homogenized some range of depths (2-140m)
+
+The biological pathways we are analyzing are 
+- Biosynthesis:
+- Energy-Metabolism
+- Degradation
+- Detoxification
+- Metabolic-Clusters
+More information on how interesting and complex these pathways are can be found on [KEGG](https://www.genome.jp/kegg/pathway/map/map01100.html)
+
+### Data cleaning
+Since we wanted to focus solely on viral DNA, we had to filter the data for only viral DNA. See figure 1 for the original dataset classified by viral, bacterial, or mixture. 
+
+<add figure of types of data>
+
+While exploring the data we saw that there were indeed what appear to be differences in DNA abundance accross biological pathways. See figure 2.
+There are other pathways in the original raw dataset, but they belonged to other bacterial or mixed categories, so they did not show up after we filtered the data. This resulted in 90 samples out of 299, or 30% of the total data.
+
+To keep things simple, we are only looking at the higher level biological pathways stored as LEVEL1, but for those who are interested, the original dataset contains LEVEL2 and LEVEL3 variables that further classify the types of biological pathways these genes may be involved in. Thus, for our analysis, we used the LEVEL1 categorical variable.
+
+Here are the variables we are using:
+| Dataset Features | |
+|---|---|
+| Records | 134097 |
+| Variables | 21 |
+| Data Type | Categorical and Numerical |
+
+```{R data snapshot}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(dplyr)
+
+wrangled_data_snapshot <- read.csv("../data/taracyc_data_cleaned.csv") 
+
+head(wrangled_data,5)
+
+```
+
+## Methods
+
+We used a 2-way ANOVA test to answer our research question of whether there is a difference in the  mean abundance of viral DNA sequences across biological pathways and ocean depth levels. We are aware that in order to use ANOVA, your data should meet several assumptions, and can be tested with several methods:
+
+| Assumption |Test|
+|---- |--- |
+| the data are normally distributed | Levene's test, and Plot residuals and see if they are normally distributed|
+| the variance across groups must be homogeneous | ggnorm plot of standardized residuals | 
+
+We did a Levene's test and it failed.
+
+```{R Levene test}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+However, we are going to proceed with our ANOVA analysis, as this is the only method of analysis that we currently are comfortable using to answer our question. Perhaps in the future we will revisit this analysis and use a more sophisticated approach.
+
+## Results
+
+> Our ANOVA results are shown in the table below. Note that LEVEL1 is the name of the factor for Biological Pathways. All results had a p-value < 0.05, and thus we can reject our null hypothesis. There is a significant difference in mean viral DNA abundance (RPKM) accross different depths, and biological pathways. Our findings can be visualized by the plot below. Biosynthesis seems to be the most abundant pathway across all depths. 
+
+```{R results table}
+knitr::opts_chunk$set(echo = FALSE)
+  
+#Read data
+  wrangled_data <- read.csv("../data/taracyc_data_cleaned.csv")
+  
+  # Two-way ANOVA with interaction effect. Using type III ANOVA, since our data has 
+  # unequal numbers of subjects in each group.
+  res.aov3 <- aov(RPKM ~ LEVEL1 * DEPTH, data = wrangled_data)
+  results <- broom::tidy(Anova(res.aov3, type = "III"))
+  results
+
+```
+
+
+```{R}
+knitr::opts_chunk$set(echo = FALSE)
+
+  (depth_plot <- wrangled_data %>%
+      #group by pathway name and depth
+      group_by(LEVEL1, DEPTH) %>% 
+      #calculate mean RPKM values and the standard error
+      summarize(mean_RPKM = mean(RPKM),
+                se        = sd(RPKM)/sqrt(length(RPKM))) %>%
+      #plot mean RPKM values with errorbars for each pathway and facet by depth
+      ggplot(aes(x = LEVEL1)) +
+      geom_point(aes(y = mean_RPKM), colour = "red") +
+      facet_wrap(~DEPTH) +
+      geom_errorbar(aes(ymin = mean_RPKM + qnorm(alpha/2)*se,
+                        ymax = mean_RPKM - qnorm(alpha/2)*se),
+                    colour = "red",
+                    width  = 0.2) +
+      theme_bw() +
+      labs(x = "Biological Pathway", y = "DNA Abundance (RPKM)")) +
+      theme(axis.text.x=element_text(angle=90,hjust=1)) +
+      ggtitle("Mean DNA abundance accross depths and pathways")
+```
+
+## Discussion
+
+> We can conclude that there is a difference in mean viral DNA accross all pathways and depths. However, when comparing interaction effects of each depth and pathway, there are a few groups that may not be significantly different, but it is hard to tell visually. With a 2-way ANOVA, we are only able to determine whether one or more groups is significantly difference than the others. Thus, even though we rejected our null hypothesis, we can not conclude which pathways are significantly different. However, to further investigate these differences, one could do a pairwise t.test or Tukey-Kramer analysis. 
+
+> The most obvious trend is that the biosynthesis pathway seems to be the most abundant in most depths. The surface level seems to have the most significantly different (non-overlapping error bars) for each pathway's mean RKPM values. Other layers have more variability. This is most visible in the Mixed layer depth, as some of the error bars overlap. This makes sense, since the mixed depth has a wide range. In the surface and DCM layers, there is definitely an increased level of biosynthesis viral DNA. This is interesting and makes sense, as most bacteria and their viruses are growing near the surface, where they have access to sunlight for photosynthesis.
+
+## Conclusion
+
+> This was a very interesting exploration of some of the viral DNA that represents the world's ocean populations. In the future, we hope to analyze how the viral DNA might affect the abundance of bacterial DNA for each pathway. We hypothesize that the viral DNA will be correlated with the bacterial DNA, as it seems that they interact. <sup>2</sup> Additional factors could be explored, such as how the viral and DNA samples and pathways are distributed accross geographical locations. There is so much waiting to be discovered, and we are excited to see what future findings may uncover, and what implications these findings may have on how we manage and care for our oceans in the face of climate change.
+
+## References
+- 1) van der Heijden, L. H., and Kamenos, N. A. (2015) Calculating the global contribution of coralline algae to carbon burial. Biogeosciences Discussions, 12(10), pp. 7845-7877. [link](http://eprints.gla.ac.uk/106392/1/106392.pdf)
+
+- 2) Thompson et al., 2007. Phage auxiliary metabolic genes and the redirection of cyanobacterial host carbon metabolism [link](http://www.pnas.org/content/108/39/E757.short)
+
+-3) [Tara Oceans Project website](https://oceans.taraexpeditions.org/en/m/about-tara/les-expeditions/tara-oceans/)
+
