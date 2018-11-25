@@ -5,7 +5,7 @@
 
 # This script reads in the data from taracyc_data.csv
 # This script does an exploratory data anlysis and data wrangling to clean the data
-# This script takes 2 arguments, input and output file paths.
+# This script takes 3 arguments, input and output file paths.
 
 #
 
@@ -62,12 +62,10 @@ main <- function() {
     geom_bar(width=0.9, fill = "#FF6666") +
     scale_colour_brewer(palette="Spectral")+
     coord_flip() +
-    labs(x="DNA Sequences",
-         y="Samples Taken From Ocean",
+    labs(x="DNA Mapped",
+         y="Samples",
          caption="\n
-         The Tara Oceans Project collected water samples data worldwide for shotgun 
-         metagenomic sequencing, and this data was then mapped to the presence of 
-         Bacteria and Viral DNA sequences.")+
+         Figure 1: Samples collected for Ocean DNA by Tara Oceans Project")+
     theme_classic()+
     theme(aspect.ratio = .3)+
     theme(plot.title = element_text(hjust = 0.5),
@@ -76,7 +74,7 @@ main <- function() {
     # Saving Plot
     suppressMessages(
       ggsave(filename=paste(output_figs,"/fig1_eda_sample_split.png",sep="")
-             ,plot=fig_1,height=2.5,width=6))
+             ,plot=fig_1,height=2.5,width=5))
   
   
   # Filtering out samples with Viral DNA Sequences
@@ -103,8 +101,7 @@ main <- function() {
     guides(size = FALSE)+
     coord_equal() +
     labs(caption="\n
-         The Tara Oceans Project collected water samples data of Viral
-         DNA Sequences from around the globe from varied water bodies.")+
+    Figure : Geographical Spread of viral dna collected around the world")+
     theme_void()+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5))
@@ -127,10 +124,7 @@ main <- function() {
     labs(x="Biological Pathways",
          y="Samples Collected",
          caption="\n
-         The Viral DNA Sequences interact in five metabolomic pathways namely, 
-         Metabolic-Clusters, Energy-Metabolsim, Detoxification, Degradation and Biosynthesis a
-         nd are found at four different depths, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic),
-         MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer).")+
+    Figure 2:Samples of Viral DNA Sequences Collected for five biological pathways across four levels of ocean depth")+
     scale_fill_brewer(palette = "Paired")+
     theme_classic()+
     theme(aspect.ratio = .2)+
@@ -142,7 +136,7 @@ main <- function() {
   # Saving plot
   suppressMessages(
     ggsave(filename=paste(output_figs,"/fig3_eda_biological_pathways_depth_dna_volume.png",sep="")
-           ,plot=fig_3))
+           ,plot=fig_3,width=8))
   
   
   
@@ -157,14 +151,12 @@ main <- function() {
     scale_fill_brewer(palette = "Spectral")+
     labs(x="Biological Pathways",
          y=expression(paste(
-           "Reads Per Kilobase Meter (",
+           "Reads Per Kilobase Million (",
            log[10],
            " RPKM)", sep=" ")),
          caption="\n
-         The Viral DNA Sequences genomic data have been mapped to metabolomic pathways.The samples 
-         with only Viral DNA Sequences showcases interaction with five metabolomic pathways namely, 
-         Metabolic-Clusters, Energy-Metabolsim, Detoxification, Degradation and Biosynthesis. Due to 
-         variation in RPKM values, log base 10 is taken for plot feasibility.")+
+         Figure 3: Spread of Abundance of Viral DNA Sequences (RKPM) and Outliers across Biological Pathways.
+         Due to variation in RPKM values, log base 10 is taken for plot feasibility.")+
     theme_classic()+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5),
@@ -187,14 +179,13 @@ main <- function() {
     scale_fill_brewer(palette = "PuBuGn")+
     labs(x="Depths",
          y=expression(paste(
-           "Reads Per Kilobase Meter (",
+           "Reads Per Kilobase Million (",
            log[10],
            " RPKM)", sep=" ")),
          caption="\n
-         The Viral DNA Sequences genomic data have sampled from varied depths below the ocean surface.
-         The Viral DNA sequences are found at four different depths namely, DCM (Deep Chlorophyll Maximum), 
-         MES (Mesopelagic), MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer).
-         Due to variation in RPKM values, log base 10 is taken for plot feasibility.")+
+         Figure 4: Spread of Abundance of Viral DNA Sequences (RKPM) and Outliers across levels of Ocean Depth 
+         Ocean depths entail, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic), MIX (Marine Epipelagic Mixed Layer) 
+         and SRF(Surface Water Layer). Due to variation in RPKM values, log base 10 is taken for plot feasibility.")+
     theme_classic()+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5),
@@ -220,14 +211,14 @@ main <- function() {
     ggplot(aes(DEPTH,LEVEL1, z = RPKM)) +
     stat_summary_2d(fun = "mean")+
     scale_fill_distiller(palette="Spectral",
-                         name="Mean RPKM (Reads Per Kilobase Meter")+
+                         name="Mean RPKM (Reads Per Kilobase Millions)")+
     coord_equal() +
     labs(x="Depths",
          y="Biological Pathways",
-         caption="The Viral DNA Sequences interact in five metabolomic pathways namely, 
-         Metabolic-Clusters, Energy-Metabolsim, Detoxification, Degradation and Biosynthesis a
-         nd are found at four different depths, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic),
-         MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer).")+
+         caption="\n
+         Figure 5: Mean Abundance of Viral DNA Sequences in 20 categories
+         Ocean depths entail, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic), 
+         MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer). ")+
     theme_classic()+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5)) 
