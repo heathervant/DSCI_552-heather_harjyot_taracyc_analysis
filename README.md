@@ -51,6 +51,9 @@ Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
 ```
 bash run_all.sh
 ```
+## Process flow 
+
+![](img/usage_process_flow.png)
 
 ## Dependencies
 
