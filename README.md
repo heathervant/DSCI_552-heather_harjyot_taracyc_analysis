@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------
-## Viral Voyager: Taracyc Ocean Virus Analysis 
+## Viral Voyager: Taracyc Ocean Virus Analysis
 -----------------------------------------------------------------------------------
 
 Authors
@@ -34,6 +34,8 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | Depth | Categorical |  Levels of ocean depth |
 <br>
 
+A detailed report of the analysis is available [here](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/doc/taracyc_report.md).
+
 ## Usage
 
 1. Clone this repo, and using the command line, navigate to the root of this project.
@@ -51,18 +53,18 @@ Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
 ```
 bash run_all.sh
 ```
-## Process flow 
+## Process flow
 
 ![](img/usage_process_flow.png)
 
 ## Dependencies
 
-* R and R libraries   
-  `tidyverse`  
-   `ggplot2`  
-   `ggmap`  
-   `maps`  
-   `car`  
-   `ggpubr`  
-   `rmarkdown`  
-   `knitr`  
+* R [version 3.5.1 ] and R libraries   
+  `tidyverse`  [tidyverse_1.2.1](https://cran.r-project.org/web/packages/tidyverse/index.html)
+   `ggplot2`   [ggplot2_3.0.0](https://cran.r-project.org/src/contrib/Archive/ggplot2/)
+   `ggmap`     [ggmap_2.6.1](https://cran.r-project.org/web/packages/ggmap/index.html)
+   `maps`      [maps_3.3.0](https://cran.r-project.org/web/packages/maps/index.html)
+   `car`       [car_3.0-2](https://cran.r-project.org/web/packages/car/index.html)
+   `ggpubr`    [ggpubr_0.2.999](https://github.com/kassambara/ggpubr)
+   `rmarkdown` [rmarkdown_1.10](https://cran.r-project.org/web/packages/rmarkdown/index.html)
+   `knitr`  [knitr_1.20](https://cran.r-project.org/web/packages/knitr/index.html)
