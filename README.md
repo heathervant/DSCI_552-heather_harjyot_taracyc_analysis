@@ -59,12 +59,15 @@ bash run_all.sh
 
 ## Dependencies
 
-* R [version 3.5.1 ] and R libraries   
-  `tidyverse`  [tidyverse_1.2.1](https://cran.r-project.org/web/packages/tidyverse/index.html)
-   `ggplot2`   [ggplot2_3.0.0](https://cran.r-project.org/src/contrib/Archive/ggplot2/)
-   `ggmap`     [ggmap_2.6.1](https://cran.r-project.org/web/packages/ggmap/index.html)
-   `maps`      [maps_3.3.0](https://cran.r-project.org/web/packages/maps/index.html)
-   `car`       [car_3.0-2](https://cran.r-project.org/web/packages/car/index.html)
-   `ggpubr`    [ggpubr_0.2.999](https://github.com/kassambara/ggpubr)
-   `rmarkdown` [rmarkdown_1.10](https://cran.r-project.org/web/packages/rmarkdown/index.html)
-   `knitr`  [knitr_1.20](https://cran.r-project.org/web/packages/knitr/index.html)
+[R version 3.5.1 ](https://cran.r-project.org/bin/windows/base/) and R libraries  
+
+| Library | Version |
+|---|---|
+|`tidyverse` |[tidyverse_1.2.1](https://cran.r-project.org/web/packages/tidyverse/index.html)| 
+|   `ggplot2`|   [ggplot2_3.0.0](https://cran.r-project.org/src/contrib/Archive/ggplot2/)  |
+|   `ggmap`  |   [ggmap_2.6.1](https://cran.r-project.org/web/packages/ggmap/index.html)  |
+|   `maps`   |   [maps_3.3.0](https://cran.r-project.org/web/packages/maps/index.html)  |
+|   `car`    |   [car_3.0-2](https://cran.r-project.org/web/packages/car/index.html)  |
+|   `ggpubr` |   [ggpubr_0.2.999](https://github.com/kassambara/ggpubr)  |
+|   `rmarkdown`| [rmarkdown_1.10](https://cran.r-project.org/web/packages/rmarkdown/index.html) | 
+|   `knitr`  | [knitr_1.20](https://cran.r-project.org/web/packages/knitr/index.html)|
