@@ -59,9 +59,9 @@ bash run_all.sh
 
 ## Dependencies
 
-* R [version 3.5.1 ] and R libraries  
+[R version 3.5.1 ](https://cran.r-project.org/bin/windows/base/) and R libraries  
 
-| Libary | Version |
+| Library | Version |
 |---|---|
 |`tidyverse` |[tidyverse_1.2.1](https://cran.r-project.org/web/packages/tidyverse/index.html)| 
 |   `ggplot2`|   [ggplot2_3.0.0](https://cran.r-project.org/src/contrib/Archive/ggplot2/)  |
