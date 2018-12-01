@@ -202,7 +202,7 @@ main <- function() {
    
   taracyc_data_cleaned <- taracyc_data_filtered %>%
     select(RPKM,LEVEL1,DEPTH) %>% 
-    filter(RPKM>quantile(RPKM, probs=0.01),RPKM<quantile(RPKM, probs=0.99))
+    filter(RPKM>quantile(RPKM, probs=0.0001),RPKM<quantile(RPKM, probs=0.9999))
   
   
   #  Heatmap for mean viral abundance across biological pathways and ocean depth

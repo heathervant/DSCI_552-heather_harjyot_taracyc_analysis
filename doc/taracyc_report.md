@@ -30,25 +30,36 @@ We will be analyzing the metaviriome data collected from the [Tara Oceans Projec
 
 Here are the variables we are using:
 
-| Variable Name | Type        | Description                                               |
-|---------------|-------------|-----------------------------------------------------------|
-| RKPM          | Continuous  | Reads per kilobase of transcript per million mapped reads |
-| LEVEL1        | Categorical | Biological Pathways                                       |
-| Depth         | Categorical | Levels of ocean depth                                     |
+Variable Name | Type | Description |
+
+|---|---|---|
+
+RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
+
+LEVEL1 | Categorical | Biological Pathways |
+
+Depth | Categorical | Levels of ocean depth |
 
 The four depths that we explored are:
 
 -   SRF: Surface Water Layer (5m)
+
 -   DCM: Deep Chlorophyll Maximum (17-188m)
+
 -   MIX: Marine Epipelagic Mixed Layer (2-140m)
+
 -   MES: Mesopelagic (250-1000m)
 
 The biological pathways we are analyzing are:
 
 -   Biosynthesis:
+
 -   Energy-Metabolism
+
 -   Degradation
+
 -   Detoxification
+
 -   Metabolic-Clusters
 
 More information on how interesting and complex these pathways are can be found on [KEGG](https://www.genome.jp/kegg/pathway/map/map01100.html)
@@ -63,7 +74,18 @@ More information on how interesting and complex these pathways are can be found 
 |    4|  0.1531230| Degradation  | DCM   |
 |    5|  0.0597218| Degradation  | DCM   |
 
-Table 1: Showcases First few rows of the dataset downloaded
+Table 1: Showcases First few rows of the dataset used for analysis
+
+|     |       X       |       RPKM      |          LEVEL1         | DEPTH    |
+|-----|:-------------:|:---------------:|:-----------------------:|:---------|
+|     |    Min. : 1   |   Min. : 0.006  |    Biosynthesis :9148   | DCM:5007 |
+|     | 1st Qu.: 3855 |  1st Qu.: 0.252 |    Degradation :5010    | MES:2881 |
+|     | Median : 7708 |  Median : 1.924 |   Detoxification : 180  | MIX: 515 |
+|     |  Mean : 7708  |  Mean : 146.755 | Energy-Metabolism : 988 | SRF:7013 |
+|     | 3rd Qu.:11562 | 3rd Qu.: 13.760 |  Metabolic-Clusters: 90 | NA       |
+|     |  Max. :15416  | Max. :11386.163 |            NA           | NA       |
+
+Table 2: Showcases summary statistics of dataset dataset used for analysis
 
 Exploratory Data Analysis and Data Cleaning
 -------------------------------------------
@@ -84,7 +106,9 @@ One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We perfo
 
 <img src="../results/figures/fig4_eda_biological_pathways_spread_outliers.png" width="2099" />
 
-<br> <br>
+<br>
+
+<br>
 
 <img src="../results/figures/fig5_eda_depths_spread_outliers.png" width="2099" />
 
@@ -102,10 +126,15 @@ Analysis
 Two-Way ANOVA has certain assumptions:
 
 -   Dependent variable should be measured at the continuous level
+
 -   Two independent variables should each consist of two or more categorical, independent groups.
+
 -   Independence of observations
+
 -   No significant outliers
+
 -   All samples were drawn from normally distributed populations
+
 -   Homogeneity of variances (among the groups should be approximately equal).
 
 -   Factors: Biological Pathways & Ocean Depth
@@ -123,15 +152,21 @@ Results
 
 |    X| term         |       sumsq|     df|   statistic|    p.value|
 |----:|:-------------|-----------:|------:|-----------:|----------:|
-|    1| (Intercept)  |    52143749|      1|  319.864227|  0.0000000|
-|    2| LEVEL1       |    14123966|      4|   21.660082|  0.0000000|
-|    3| DEPTH        |     7272040|      3|   14.869570|  0.0000000|
-|    4| LEVEL1:DEPTH |     2327845|     12|    1.189971|  0.2833311|
-|    5| Residuals    |  2482280923|  15227|          NA|         NA|
+|    1| (Intercept)  |   227332488|      1|  434.558668|  0.0000000|
+|    2| LEVEL1       |    72878479|      4|   34.827814|  0.0000000|
+|    3| DEPTH        |    52076563|      3|   33.182413|  0.0000000|
+|    4| LEVEL1:DEPTH |    17312423|     12|    2.757805|  0.0009443|
+|    5| Residuals    |  8054173684|  15396|          NA|         NA|
 
-Table 2: Showcases results of Two-Way ANOVA, where factors are biological pathways(LEVEL1) and levels of ocean depth (DEPTH), the response variable is abundance of viral DNA (RPKM) <br> <br>
+Table 3: Showcases results of Two-Way ANOVA, where factors are biological pathways(LEVEL1) and levels of ocean depth (DEPTH), the response variable is abundance of viral DNA (RPKM)
 
-Our ANOVA results are shown in the Table 2. All results have a p-value &lt; 0.05, and thus we reject our null hypothesis. There is significant difference in mean abundance of Viral DNA Sequence across biological pathways and levels of ocean depths individually. Also, there is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences. Our findings can be visualized by the plot below. <br>
+<br>
+
+<br>
+
+Our ANOVA results are shown in the Table 2. All results have a p-value &lt; 0.05, and thus we reject our null hypothesis. There is significant difference in mean abundance of Viral DNA Sequence across biological pathways and levels of ocean depths individually. Also, there is a significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences. Our findings can be visualized by the plot below.
+
+<br>
 
 <img src="../results/figures/fig7_results.png" width="2100" />
 
