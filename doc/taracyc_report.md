@@ -9,14 +9,28 @@ Summary Report
 Taracyc Ocean Virus Analysis
 ============================
 
+<img src="report_images/tara_logo.png" width="120" />
+
 Introduction
 ------------
 
-The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans. There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival.<sup>1</sup>
+The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans.<sup>1</sup> There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival.<sup>2</sup> Carbon sequestration is also causing ocean acidification, and is affecting the health of coral reefs.<sup>3</sup>
+
+### Carbon cycle
+
+<img src="report_images/Carbon-Cycle-PIC_med.gif" alt="Carbon cycle" size="420" />
+
+Taken from: [University of Florida IFAS Shellfish Aquaculture Extension](http://shellfish.ifas.ufl.edu/projects/shellfish-farm-environment/carbon-fixation/)
 
 ### Motivation for research
 
-To further explore the populations of bacteria and viruses in the oceans, project was led by the TARA oceans <sup>1</sup> collected 300 water samples from all over the world's oceans at various depths. These samples were filtered for viral and bacterial DNA. By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria. The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs across biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
+To further explore the populations of bacteria and viruses in the oceans, project was led by the TARA oceans <sup>4</sup> collected 300 water samples from all over the world's oceans at various depths. These samples were filtered for viral and bacterial DNA. By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria. The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs across biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
+
+> To learn more about how viruses and bacteria may interact, check out these resources:
+
+> -   [Viruses and their role in the ocean](https://www.researchgate.net/publication/305447161_Viruses_and_their_role_in_the_ocean_Bacteriophages_and_bacteria_interactions)
+
+> -   [Marine Viruses: Key Players in Marine Ecosystems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5691653/)
 
 Research Question
 -----------------
@@ -174,6 +188,10 @@ This was a very interesting exploration of viral DNA that represents the world's
 References
 ----------
 
--   <sup>1</sup> Thompson et al., 2007. Phage auxiliary metabolic genes and the redirection of cyanobacterial host carbon metabolism [link](http://www.pnas.org/content/108/39/E757.short)
+-   <sup>1</sup> van der Heijden, L. H., and Kamenos, N. A. (2015) Calculating the global contribution of coralline algae to carbon burial. Biogeosciences Discussions, 12(10), pp. 7845-7877. [link](http://eprints.gla.ac.uk/106392/1/106392.pdf)
 
--   <sup>2</sup> [Tara Oceans Project website](https://oceans.taraexpeditions.org/en/m/about-tara/les-expeditions/tara-oceans/)
+-   <sup>2</sup> Thompson et al., (2007) Phage auxiliary metabolic genes and the redirection of cyanobacterial host carbon metabolism. [link](http://www.pnas.org/content/108/39/E757.short)
+
+-   <sup>3</sup> Brewer, P.G. (1997) Ocean chemistry of the fossil fuel CO2 signal: the haline signature of "Business as Usual." Geophysical Research Letters 24: 1367-1369.
+
+-   <sup>4</sup> [Tara Oceans Project website](https://oceans.taraexpeditions.org/en/m/about-tara/les-expeditions/tara-oceans/)
