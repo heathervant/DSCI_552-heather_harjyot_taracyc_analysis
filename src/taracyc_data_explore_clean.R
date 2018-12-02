@@ -52,7 +52,6 @@ main <- function() {
   
   sum(is.na(taracyc_data_marked $RPKM_log10 ))
   
-  
   # Plot to showcase sample split of DNA Sequences
   
   fig_1 <- taracyc_data_marked %>% 
@@ -67,7 +66,7 @@ main <- function() {
          caption="\n
          Figure 1: Samples collected for Ocean DNA by Tara Oceans Project")+
     theme_classic()+
-    theme(aspect.ratio = .3)+
+    theme(aspect.ratio = .4)+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5))
   
@@ -111,6 +110,23 @@ main <- function() {
     ggsave(filename=paste(output_figs,"/fig2_eda_geographical_spread.png",sep=""),
            plot=fig_2,height=6))
   
+  
+  
+  # Factor reordering depth variable to have increasing depths
+  # SRF: Surface Water Layer (5m)
+  # MIX: Marine Epipelagic Mixed Layer (2-140m)
+  # DCM: Deep Chlorophyll Maximum (17-188m)
+  # MES: Mesopelagic (250-1000m)
+
+  taracyc_data_filtered$DEPTH<- gsub('SRF', 'SRF (5m)', taracyc_data_filtered$DEPTH)
+  taracyc_data_filtered$DEPTH<- gsub('MIX', 'MIX (2-140m)', taracyc_data_filtered$DEPTH)
+  taracyc_data_filtered$DEPTH<- gsub('DCM', 'DCM (17-188m)', taracyc_data_filtered$DEPTH)
+  taracyc_data_filtered$DEPTH<- gsub('MES', 'MES (250-1000m)', taracyc_data_filtered$DEPTH)
+  
+  
+  taracyc_data_filtered$DEPTH<- factor(
+    taracyc_data_filtered$DEPTH, 
+    levels = c("SRF (5m)","MIX (2-140m)","DCM (17-188m)","MES (250-1000m)"))
   
   
   # Samples Size under two factors
@@ -184,8 +200,8 @@ main <- function() {
            " RPKM)", sep=" ")),
          caption="\n
          Figure 4: Spread of Abundance of Viral DNA Sequences (RKPM) and Outliers across levels of Ocean Depth 
-         Ocean depths entail, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic), MIX (Marine Epipelagic Mixed Layer) 
-         and SRF(Surface Water Layer). Due to variation in RPKM values, log base 10 is taken for plot feasibility.")+
+         Ocean depths entail SRF(Surface Water Layer), MIX (Marine Epipelagic Mixed Layer), DCM (Deep Chlorophyll Maximum) 
+         and MES (Mesopelagic). Due to variation in RPKM values, log base 10 is taken for plot feasibility.")+
     theme_classic()+
     theme(plot.title = element_text(hjust = 0.5),
           plot.caption=element_text(hjust = 0.5),
@@ -217,16 +233,17 @@ main <- function() {
          y="Biological Pathways",
          caption="\n
          Figure 5: Mean Abundance of Viral DNA Sequences in 20 categories
-         Ocean depths entail, DCM (Deep Chlorophyll Maximum), MES (Mesopelagic), 
-         MIX (Marine Epipelagic Mixed Layer) and SRF(Surface Water Layer). ")+
+         Ocean depths entail, SRF(Surface Water Layer), MIX (Marine Epipelagic 
+         Mixed Layer), DCM (Deep Chlorophyll Maximum) and MES (Mesopelagic). ")+
     theme_classic()+
     theme(plot.title = element_text(hjust = 0.5),
-          plot.caption=element_text(hjust = 0.5)) 
+          plot.caption=element_text(hjust = 0.5),
+         axis.text.x=element_text(angle=30,hjust=1)) 
   
   # Saving plot
   suppressMessages(
     ggsave(filename=paste(output_figs,"/fig6_eda_mean_dna_across_categories.png",sep=""),
-           plot=fig_6,height=4))
+           plot=fig_6,height=5))
   
   write.csv(taracyc_data_cleaned , file = output_data)
   
