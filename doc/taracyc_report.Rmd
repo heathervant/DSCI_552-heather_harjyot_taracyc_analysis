@@ -11,18 +11,12 @@ output: github_document
 
 # Taracyc Ocean Virus Analysis  
 
-```{r, echo=FALSE,out.height=400}
-
-knitr::include_graphics('../img/tara_logo1.png')
-
-```
-
 
 ## Introduction
 
 The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans<sup>1</sup>. There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival<sup>2</sup>. Carbon sequestration is also causing ocean acidification, and is affecting the health of coral reefs<sup>3</sup>.
 
-```{r, echo=FALSE,out.height=400}
+```{r, echo=FALSE}
 
 knitr::include_graphics('../img/Carbon-Cycle-PIC_med.png')
 
