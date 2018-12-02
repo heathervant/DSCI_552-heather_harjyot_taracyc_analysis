@@ -9,28 +9,23 @@ Summary Report
 Taracyc Ocean Virus Analysis
 ============================
 
-<img src="report_images/tara_logo.png" width="120" />
-
 Introduction
 ------------
 
-The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans.<sup>1</sup> There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival.<sup>2</sup> Carbon sequestration is also causing ocean acidification, and is affecting the health of coral reefs.<sup>3</sup>
+The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans<sup>1</sup>. There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival<sup>2</sup>. Carbon sequestration is also causing ocean acidification, and is affecting the health of coral reefs<sup>3</sup>.
 
-### Carbon cycle
+<img src="../img/Carbon-Cycle-PIC_med.png" width="919" height="500" />
 
-<img src="report_images/Carbon-Cycle-PIC_med.gif" alt="Carbon cycle" size="420" />
-
-Taken from: [University of Florida IFAS Shellfish Aquaculture Extension](http://shellfish.ifas.ufl.edu/projects/shellfish-farm-environment/carbon-fixation/)
+Image Source: [Biological Carbon Pump](http://moocs.southampton.ac.uk/oceans/2014/10/22/emma-cavan-my-research/)
 
 ### Motivation for research
 
 To further explore the populations of bacteria and viruses in the oceans, project was led by the TARA oceans <sup>4</sup> collected 300 water samples from all over the world's oceans at various depths. These samples were filtered for viral and bacterial DNA. By understanding these populations and how they might interact, we can gain insight into carbon sequestration patterns and how these viruses are impacting the bacteria. The Hallam lab at UBC created an algorithm to classify these bacterial and viral DNA sequences into categories and specific biological pathways that these sequences may be involved in. We would like to use this data to explore how viral DNA differs across biological pathways and depths to start exploring which areas and pathways are most represented by these creatures.
 
-> To learn more about how viruses and bacteria may interact, check out these resources:
+To learn more about how viruses and bacteria may interact, check out these resources:
 
-> -   [Viruses and their role in the ocean](https://www.researchgate.net/publication/305447161_Viruses_and_their_role_in_the_ocean_Bacteriophages_and_bacteria_interactions)
-
-> -   [Marine Viruses: Key Players in Marine Ecosystems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5691653/)
+-   [Viruses and their role in the ocean](https://www.researchgate.net/publication/305447161_Viruses_and_their_role_in_the_ocean_Bacteriophages_and_bacteria_interactions)
+-   [Marine Viruses: Key Players in Marine Ecosystems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5691653/)
 
 Research Question
 -----------------
@@ -44,60 +39,51 @@ We will be analyzing the metaviriome data collected from the [Tara Oceans Projec
 
 Here are the variables we are using:
 
-Variable Name | Type | Description |
-
-|---|---|---|
-
-RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
-
-LEVEL1 | Categorical | Biological Pathways |
-
-Depth | Categorical | Levels of ocean depth |
+| Variable Name | Type        | Description                                               |
+|---------------|-------------|-----------------------------------------------------------|
+| RKPM          | Continuous  | Reads per kilobase of transcript per million mapped reads |
+| LEVEL1        | Categorical | Biological Pathways                                       |
+| Depth         | Categorical | Levels of Ocean depth                                     |
 
 The four depths that we explored are:
 
 -   SRF: Surface Water Layer (5m)
-
 -   DCM: Deep Chlorophyll Maximum (17-188m)
-
 -   MIX: Marine Epipelagic Mixed Layer (2-140m)
-
 -   MES: Mesopelagic (250-1000m)
 
 The biological pathways we are analyzing are:
 
 -   Biosynthesis:
-
 -   Energy-Metabolism
-
 -   Degradation
-
 -   Detoxification
-
 -   Metabolic-Clusters
 
 More information on how interesting and complex these pathways are can be found on [KEGG](https://www.genome.jp/kegg/pathway/map/map01100.html)
 
 ### Snapshot of data set
 
-|    X|       RPKM| LEVEL1       | DEPTH |
-|----:|----------:|:-------------|:------|
-|    1|  0.4476350| Biosynthesis | DCM   |
-|    2|  0.0974505| Degradation  | DCM   |
-|    3|  0.0826759| Biosynthesis | DCM   |
-|    4|  0.1531230| Degradation  | DCM   |
-|    5|  0.0597218| Degradation  | DCM   |
+|    X|       RPKM| LEVEL1       | DEPTH         |
+|----:|----------:|:-------------|:--------------|
+|    1|  0.4476350| Biosynthesis | DCM (17-188m) |
+|    2|  0.0974505| Degradation  | DCM (17-188m) |
+|    3|  0.0826759| Biosynthesis | DCM (17-188m) |
+|    4|  0.1531230| Degradation  | DCM (17-188m) |
+|    5|  0.0597218| Degradation  | DCM (17-188m) |
 
 Table 1: Showcases First few rows of the dataset used for analysis
 
-|     |       X       |       RPKM      |          LEVEL1         | DEPTH    |
-|-----|:-------------:|:---------------:|:-----------------------:|:---------|
-|     |    Min. : 1   |   Min. : 0.006  |    Biosynthesis :9148   | DCM:5007 |
-|     | 1st Qu.: 3855 |  1st Qu.: 0.252 |    Degradation :5010    | MES:2881 |
-|     | Median : 7708 |  Median : 1.924 |   Detoxification : 180  | MIX: 515 |
-|     |  Mean : 7708  |  Mean : 146.755 | Energy-Metabolism : 988 | SRF:7013 |
-|     | 3rd Qu.:11562 | 3rd Qu.: 13.760 |  Metabolic-Clusters: 90 | NA       |
-|     |  Max. :15416  | Max. :11386.163 |            NA           | NA       |
+<br>
+
+|       RPKM      |          LEVEL1         |         DEPTH        |
+|:---------------:|:-----------------------:|:--------------------:|
+|   Min. : 0.006  |    Biosynthesis :9148   |  DCM (17-188m) :5007 |
+|  1st Qu.: 0.252 |    Degradation :5010    | MES (250-1000m):2881 |
+|  Median : 1.924 |   Detoxification : 180  |  MIX (2-140m) : 515  |
+|  Mean : 146.755 | Energy-Metabolism : 988 |    SRF (5m) :7013    |
+| 3rd Qu.: 13.760 |  Metabolic-Clusters: 90 |          NA          |
+| Max. :11386.163 |            NA           |          NA          |
 
 Table 2: Showcases summary statistics of dataset dataset used for analysis
 
@@ -126,7 +112,7 @@ One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We perfo
 
 <img src="../results/figures/fig5_eda_depths_spread_outliers.png" width="2099" />
 
-The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 1st percentile and lying above the 99th percentile were removed to ensure the assumption of homogeneity of variances.
+The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 0.0 percentile and lying above the 99.99th percentile were removed to ensure the assumption of homogeneity of variances.
 
 After cleaning the data set we observe the mean abundance of viral DNA sequences in groups created for the two factors under consideration, biological pathways and ocean depth. The data gets grouped into 20 categories.
 
@@ -139,19 +125,14 @@ Analysis
 
 Two-Way ANOVA has certain assumptions:
 
--   Dependent variable should be measured at the continuous level
+1.  Dependent variable should be measured at the continuous level
+2.  Two independent variables should each consist of two or more categorical, independent groups.
+3.  Independence of observations
+4.  No significant outliers
+5.  All samples were drawn from normally distributed populations
+6.  Homogeneity of variances (among the groups should be approximately equal).
 
--   Two independent variables should each consist of two or more categorical, independent groups.
-
--   Independence of observations
-
--   No significant outliers
-
--   All samples were drawn from normally distributed populations
-
--   Homogeneity of variances (among the groups should be approximately equal).
-
--   Factors: Biological Pathways & Ocean Depth
+#### Factors: Biological Pathways & Ocean Depth
 
 H<sub>0</sub>: There is no significant interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences
 
@@ -206,3 +187,5 @@ References
 -   <sup>3</sup> Brewer, P.G. (1997) Ocean chemistry of the fossil fuel CO2 signal: the haline signature of "Business as Usual." Geophysical Research Letters 24: 1367-1369.
 
 -   <sup>4</sup> [Tara Oceans Project website](https://oceans.taraexpeditions.org/en/m/about-tara/les-expeditions/tara-oceans/)
+
+-   [Logo Link](http://oganm.com/shiny/taracyc/)
