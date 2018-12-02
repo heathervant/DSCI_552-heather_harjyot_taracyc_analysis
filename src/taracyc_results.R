@@ -32,6 +32,11 @@ main <- function() {
   #Read data
   wrangled_data <- read.csv(input)
   
+  # Factor reordering depth variable to have increasing depths
+  wrangled_data$DEPTH<- factor(
+    wrangled_data$DEPTH, 
+    levels = c("SRF (5m)","MIX (2-140m)","DCM (17-188m)","MES (250-1000m)"))
+  
   #set alpha to 0.05
   alpha = 0.05
   
