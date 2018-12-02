@@ -30,60 +30,49 @@ We will be analyzing the metaviriome data collected from the [Tara Oceans Projec
 
 Here are the variables we are using:
 
-Variable Name | Type | Description |
-
-|---|---|---|
-
-RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
-
-LEVEL1 | Categorical | Biological Pathways |
-
-Depth | Categorical | Levels of ocean depth |
+| Variable Name | Type        | Description                                               |
+|---------------|-------------|-----------------------------------------------------------|
+| RKPM          | Continuous  | Reads per kilobase of transcript per million mapped reads |
+| LEVEL1        | Categorical | Biological Pathways                                       |
+| Depth         | Categorical | Levels of Ocean depth                                     |
 
 The four depths that we explored are:
 
 -   SRF: Surface Water Layer (5m)
-
 -   DCM: Deep Chlorophyll Maximum (17-188m)
-
 -   MIX: Marine Epipelagic Mixed Layer (2-140m)
-
 -   MES: Mesopelagic (250-1000m)
 
 The biological pathways we are analyzing are:
 
 -   Biosynthesis:
-
 -   Energy-Metabolism
-
 -   Degradation
-
 -   Detoxification
-
 -   Metabolic-Clusters
 
 More information on how interesting and complex these pathways are can be found on [KEGG](https://www.genome.jp/kegg/pathway/map/map01100.html)
 
 ### Snapshot of data set
 
-|    X|       RPKM| LEVEL1       | DEPTH |
-|----:|----------:|:-------------|:------|
-|    1|  0.4476350| Biosynthesis | DCM   |
-|    2|  0.0974505| Degradation  | DCM   |
-|    3|  0.0826759| Biosynthesis | DCM   |
-|    4|  0.1531230| Degradation  | DCM   |
-|    5|  0.0597218| Degradation  | DCM   |
+|    X|       RPKM| LEVEL1       | DEPTH         |
+|----:|----------:|:-------------|:--------------|
+|    1|  0.4476350| Biosynthesis | DCM (17-188m) |
+|    2|  0.0974505| Degradation  | DCM (17-188m) |
+|    3|  0.0826759| Biosynthesis | DCM (17-188m) |
+|    4|  0.1531230| Degradation  | DCM (17-188m) |
+|    5|  0.0597218| Degradation  | DCM (17-188m) |
 
 Table 1: Showcases First few rows of the dataset used for analysis
 
-|     |       X       |       RPKM      |          LEVEL1         | DEPTH    |
-|-----|:-------------:|:---------------:|:-----------------------:|:---------|
-|     |    Min. : 1   |   Min. : 0.006  |    Biosynthesis :9148   | DCM:5007 |
-|     | 1st Qu.: 3855 |  1st Qu.: 0.252 |    Degradation :5010    | MES:2881 |
-|     | Median : 7708 |  Median : 1.924 |   Detoxification : 180  | MIX: 515 |
-|     |  Mean : 7708  |  Mean : 146.755 | Energy-Metabolism : 988 | SRF:7013 |
-|     | 3rd Qu.:11562 | 3rd Qu.: 13.760 |  Metabolic-Clusters: 90 | NA       |
-|     |  Max. :15416  | Max. :11386.163 |            NA           | NA       |
+|     |       X       |       RPKM      |          LEVEL1         |         DEPTH        |
+|-----|:-------------:|:---------------:|:-----------------------:|:--------------------:|
+|     |    Min. : 1   |   Min. : 0.006  |    Biosynthesis :9148   |  DCM (17-188m) :5007 |
+|     | 1st Qu.: 3855 |  1st Qu.: 0.252 |    Degradation :5010    | MES (250-1000m):2881 |
+|     | Median : 7708 |  Median : 1.924 |   Detoxification : 180  |  MIX (2-140m) : 515  |
+|     |  Mean : 7708  |  Mean : 146.755 | Energy-Metabolism : 988 |    SRF (5m) :7013    |
+|     | 3rd Qu.:11562 | 3rd Qu.: 13.760 |  Metabolic-Clusters: 90 |          NA          |
+|     |  Max. :15416  | Max. :11386.163 |            NA           |          NA          |
 
 Table 2: Showcases summary statistics of dataset dataset used for analysis
 
@@ -112,7 +101,7 @@ One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We perfo
 
 <img src="../results/figures/fig5_eda_depths_spread_outliers.png" width="2099" />
 
-The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 1st percentile and lying above the 99th percentile were removed to ensure the assumption of homogeneity of variances.
+The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 0.0 percentile and lying above the 99.99th percentile were removed to ensure the assumption of homogeneity of variances.
 
 After cleaning the data set we observe the mean abundance of viral DNA sequences in groups created for the two factors under consideration, biological pathways and ocean depth. The data gets grouped into 20 categories.
 
