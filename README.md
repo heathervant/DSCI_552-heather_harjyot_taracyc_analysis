@@ -41,6 +41,7 @@ A detailed report of the analysis is available [here](https://github.com/UBC-MDS
 1. Clone this repo, and using the command line, navigate to the root of this project.
 
 2. Run the following commands:
+
 ```
 Rscript src/taracyc_data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/taracyc_data.csv
 Rscript src/taracyc_data_explore_clean.R data/taracyc_data.csv results/figures data/taracyc_data_cleaned.csv
@@ -50,9 +51,17 @@ Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
 ```
 
   Or call run the following in your command shell
+  
 ```
 bash run_all.sh
 ```
+ Or use Makefile, to run the data analysis pipeline
+ 
+```
+  make clean
+  make all
+```
+
 ## Process flow
 
 ![](img/usage_process_flow.png)
