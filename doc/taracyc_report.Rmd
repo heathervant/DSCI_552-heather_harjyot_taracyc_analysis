@@ -11,10 +11,10 @@ output: github_document
 
 # Taracyc Ocean Virus Analysis  
 
-```{r, echo=FALSE,out.height=1,out.width=1}
-htmltools::img(src = knitr::image_uri('../img/tara_logo1.png'), 
-               alt = 'logo', 
-               style = 'position:absolute; top:200px; left:300px; padding:10px;')
+```{r, echo=FALSE,out.height=400}
+
+knitr::include_graphics('../img/tara_logo1.png')
+
 ```
 
 
