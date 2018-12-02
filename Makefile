@@ -22,7 +22,7 @@ data/taracyc_data.csv: $(https://media.githubusercontent.com/media/HarjyotKaur/D
 # Making Plots
 data/taracyc_data_cleaned.csv results/figures: src/taracyc_data_explore_clean.R data/taracyc_data.csv
 	Rscript src/taracyc_data_explore_clean.R data/taracyc_data.csv results/figures data/taracyc_data_cleaned.csv
-	 $(info Creating EDA Plots and Cleaning Data)
+	 	$(info Creating EDA Plots and Cleaning Data)
 
 #  Running Analysis
 results/taracyc_results.csv: data/taracyc_data_cleaned.csv src/taracyc_data_analysis.R
@@ -32,12 +32,12 @@ results/taracyc_results.csv: data/taracyc_data_cleaned.csv src/taracyc_data_anal
 # Summarizing Results
 results/figures/fig7_results.png: src/taracyc_results.R data/taracyc_data_cleaned.csv
 	Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/fig7_results.png
-	 $(info Summarizing Results)
+	 	$(info Summarizing Results)
 
 # Making Report
 doc/taracyc_report.md: doc/taracyc_report.Rmd data/taracyc_data_cleaned.csv results/figures results/taracyc_results.csv results/figures/fig7_results.png
 	Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
-	 $(info Generating Report)
+	 	$(info Generating Report)
 
 clean:
 
