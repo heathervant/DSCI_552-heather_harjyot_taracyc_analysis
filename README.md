@@ -61,6 +61,7 @@ bash run_all.sh
   make clean
   make all
 ```
+Link for [Makefile](https://github.com/HarjyotKaur/Taracyc_Ocean_Virus_Analysis/blob/master/Makefile)
 
 ## Process flow
 
