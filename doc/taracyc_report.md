@@ -14,7 +14,7 @@ Introduction
 
 The ocean is full of mysteries, and plays an important role in oxygen production, weather patterns, climate, carbon sequestration and global ecosystem health. Bacteria help sequester carbon in the ocean and it is estimated that 93% of the earth's carbon dioxide is stored in algae, vegetation, and coral under the sea and cycled through the oceans<sup>1</sup>. There are viruses present can infect bacteria and alter their chance of survival. For example, viruses have been found to use their own viral DNA to turn the photosynthesis system back on in a dying bacterial cell, to promote cell survival<sup>2</sup>. Carbon sequestration is also causing ocean acidification, and is affecting the health of coral reefs<sup>3</sup>.
 
-<img src="../img/Carbon-Cycle-PIC_med.png" width="919" height="500" />
+<img src="../img/Carbon-Cycle-PIC_med.png" height="500" />
 
 Image Source: [Biological Carbon Pump](http://moocs.southampton.ac.uk/oceans/2014/10/22/emma-cavan-my-research/)
 
@@ -92,31 +92,31 @@ Exploratory Data Analysis and Data Cleaning
 
 The data consists of 299 samples of ocean organism DNA sequences, to bifurcate samples containing viral and bacterial DNA. Definition for bifurcation available [here](https://github.com/hackseq/tara-cyc-hs18).
 
-<img src="../results/figures/fig1_eda_sample_split.png" width="1500" />
+![](../results/figures/fig1_eda_sample_split.png)
 
 Since the research question focuses on viral DNA, we filter out the samples containing only viral DNA sequences. This resulted in 90 samples out of 299, or 30% of the total data.
 
 After, filtering the data we wanted to explore the viral DNA samples collected for various biological pathways across varied ocean depth. *To keep things simple, we are only looking at the higher level biological pathways stored as LEVEL1, but for those who are interested, the original dataset contains LEVEL2 and LEVEL3 variables that further classify the types of biological pathways these genes may be involved in.*
 
-<img src="../results/figures/fig3_eda_biological_pathways_depth_dna_volume.png" width="2400" />
+![](../results/figures/fig2_eda_biological_pathways_depth_dna_volume.png)
 
 We observe that Viral DNA Sequences samples were collected from four different levels of ocean depth. Also, the samples are able to capture interaction of viral population in five pathways. Majority of samples collected are from Surface Water Layer, the sample capture maximum interaction of Viral DNA in Biosynthesis pathway.
 
 One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We performed Levene's Test to validate the same, it evaluated the p-value &lt;0.05, thus failing the test. Since, we did not have proper tools to tackle the fallout of Levene's Test, we decided to look for outliers in data.
 
-<img src="../results/figures/fig4_eda_biological_pathways_spread_outliers.png" width="2099" />
+![](../results/figures/fig3_eda_biological_pathways_spread_outliers.png)
 
 <br>
 
 <br>
 
-<img src="../results/figures/fig5_eda_depths_spread_outliers.png" width="2099" />
+![](../results/figures/fig4_eda_depths_spread_outliers.png)
 
 The black dots in Figure 3 and 4 represent outliers in data. RPKM (Reads per kilobase million) values lying below the 0.0 percentile and lying above the 99.99th percentile were removed to ensure the assumption of homogeneity of variances.
 
 After cleaning the data set we observe the mean abundance of viral DNA sequences in groups created for the two factors under consideration, biological pathways and ocean depth. The data gets grouped into 20 categories.
 
-<img src="../results/figures/fig6_eda_mean_dna_across_categories.png" width="2099" />
+![](../results/figures/fig5_eda_mean_dna_across_categories.png)
 
 The mean abundance of viral DNA sequences is highest for biological pathways that occur in surface water layer whereas the mean abundance of viral DNA sequences seems to be similar for Detoxification and Degradation across all depths. To further investigate the interaction between biological pathways and ocean depth levels in terms of mean abundance of viral DNA sequences we will perform a Two-Way ANOVA.
 
@@ -163,7 +163,7 @@ Our ANOVA results are shown in the Table 2. All results have a p-value &lt; 0.05
 
 <br>
 
-<img src="../results/figures/fig7_results.png" width="2100" />
+![](../results/figures/fig7_results.png)
 
 It seems that viral DNA that interact in Biological Pathways do not have overlapping confidence intervals across all ocean depth layers. Viral DNA interacting in Degradation, Detoxification and Metabolic-Clusters have overlapping confidence intervals in Deep Chlorophyll Maximum ocean layer.
 

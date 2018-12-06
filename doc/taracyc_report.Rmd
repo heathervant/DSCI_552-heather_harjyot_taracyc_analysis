@@ -145,7 +145,7 @@ After, filtering the data we wanted to explore the viral DNA samples collected f
 
 
 
-knitr::include_graphics('../results/figures/fig3_eda_biological_pathways_depth_dna_volume.png')
+knitr::include_graphics('../results/figures/fig2_eda_biological_pathways_depth_dna_volume.png')
 
 
 
@@ -165,7 +165,7 @@ One of the assumptions for a Two-Way ANOVA is homogeneity of variances. We perfo
 
 
 
-knitr::include_graphics('../results/figures/fig4_eda_biological_pathways_spread_outliers.png')
+knitr::include_graphics('../results/figures/fig3_eda_biological_pathways_spread_outliers.png')
 
 
 
@@ -183,7 +183,7 @@ knitr::include_graphics('../results/figures/fig4_eda_biological_pathways_spread_
 
 
 
-knitr::include_graphics('../results/figures/fig5_eda_depths_spread_outliers.png')
+knitr::include_graphics('../results/figures/fig4_eda_depths_spread_outliers.png')
 
 
 
@@ -203,7 +203,7 @@ After cleaning the data set we observe the mean abundance of viral DNA sequences
 
 
 
-knitr::include_graphics('../results/figures/fig6_eda_mean_dna_across_categories.png')
+knitr::include_graphics('../results/figures/fig5_eda_mean_dna_across_categories.png')
 
 
 
