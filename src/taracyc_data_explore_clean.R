@@ -17,9 +17,6 @@
 
 # load libraries
 suppressPackageStartupMessages(library(tidyverse))
-suppressPackageStartupMessages(library(ggmap))
-suppressPackageStartupMessages(library(maps))
-
 
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
@@ -81,37 +78,6 @@ main <- function() {
   taracyc_data_filtered <- taracyc_data_marked %>% 
     filter(ocean_dna=="Virus")
   
-  
-  ## Geographical Spread of Viral DNA Sequences
-  
-  # Making Latitude and Longitude numeric
-  taracyc_data_filtered <- taracyc_data_filtered  %>% 
-    mutate(lat=as.numeric(LAT),long=as.numeric(LONG))
-  
-  # Reading data for world latitudes and longitudes
-  my_map_data <- map_data("world") 
-  
-  # Plotting Geographical Spread of Viral DNA Sequences
-  
-  fig_2 <- ggplot(my_map_data, aes(long, lat)) +
-    geom_polygon(aes(group=group), fill = "darkolivegreen3",color="white") +
-    geom_point(data=taracyc_data_filtered , aes(size=RPKM,color=RPKM))+
-    scale_color_distiller(palette="Blues")+
-    guides(size = FALSE)+
-    coord_equal() +
-    labs(caption="\n
-    Figure : Geographical Spread of viral dna collected around the world")+
-    theme_void()+
-    theme(plot.title = element_text(hjust = 0.5),
-          plot.caption=element_text(hjust = 0.5))
-  
-  # Saving Plot
-  suppressMessages(
-    ggsave(filename=paste(output_figs,"/fig2_eda_geographical_spread.png",sep=""),
-           plot=fig_2,height=6))
-  
-  
-  
   # Factor reordering depth variable to have increasing depths
   # SRF: Surface Water Layer (5m)
   # MIX: Marine Epipelagic Mixed Layer (2-140m)
@@ -131,7 +97,7 @@ main <- function() {
   
   # Samples Size under two factors
   
-  fig_3 <- taracyc_data_filtered  %>%
+  fig_2 <- taracyc_data_filtered  %>%
     group_by(LEVEL1,DEPTH) %>% 
     ggplot(aes(LEVEL1)) +
     coord_flip() +
@@ -151,14 +117,14 @@ main <- function() {
   
   # Saving plot
   suppressMessages(
-    ggsave(filename=paste(output_figs,"/fig3_eda_biological_pathways_depth_dna_volume.png",sep="")
-           ,plot=fig_3,width=8))
+    ggsave(filename=paste(output_figs,"/fig2_eda_biological_pathways_depth_dna_volume.png",sep="")
+           ,plot=fig_2,width=8))
   
   
   
   # Exploring Viral DNA Sequences in different biological pathways
   
-  fig_4 <- taracyc_data_filtered  %>% 
+  fig_3 <- taracyc_data_filtered  %>% 
     mutate(RPKM_log10=log10(RPKM)) %>% 
     filter(RPKM_log10 !=-Inf) %>% 
     ggplot(aes(y=RPKM_log10,x=LEVEL1))+
@@ -180,13 +146,13 @@ main <- function() {
   
   # Saving plot
   suppressMessages(
-    ggsave(filename=paste(output_figs,"/fig4_eda_biological_pathways_spread_outliers.png",sep="")
-           ,plot=fig_4,height=4))
+    ggsave(filename=paste(output_figs,"/fig3_eda_biological_pathways_spread_outliers.png",sep="")
+           ,plot=fig_3,height=4))
   
   
   #  Exploring Viral DNA Sequences across ocean depth
   
-  fig_5 <- taracyc_data_filtered %>% 
+  fig_4 <- taracyc_data_filtered %>% 
     mutate(RPKM_log10=log10(RPKM)) %>% 
     filter(RPKM_log10 !=-Inf) %>% 
     ggplot(aes(y=RPKM_log10,x=DEPTH))+
@@ -208,8 +174,8 @@ main <- function() {
           legend.position="none")
   # Saving plot
   suppressMessages(
-   ggsave(filename=paste(output_figs,"/fig5_eda_depths_spread_outliers.png",sep=""),
-          plot=fig_5,height=4))
+   ggsave(filename=paste(output_figs,"/fig4_eda_depths_spread_outliers.png",sep=""),
+          plot=fig_4,height=4))
   
   
   
@@ -223,7 +189,7 @@ main <- function() {
   
   #  Heatmap for mean viral abundance across biological pathways and ocean depth
   
-  fig_6 <- taracyc_data_cleaned %>% 
+  fig_5 <- taracyc_data_cleaned %>% 
     ggplot(aes(DEPTH,LEVEL1, z = RPKM)) +
     stat_summary_2d(fun = "mean")+
     scale_fill_distiller(palette="Spectral",
@@ -242,8 +208,8 @@ main <- function() {
   
   # Saving plot
   suppressMessages(
-    ggsave(filename=paste(output_figs,"/fig6_eda_mean_dna_across_categories.png",sep=""),
-           plot=fig_6,height=5))
+    ggsave(filename=paste(output_figs,"/fig5_eda_mean_dna_across_categories.png",sep=""),
+           plot=fig_5,height=5))
   
   write.csv(taracyc_data_cleaned , file = output_data)
   
