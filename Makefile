@@ -15,8 +15,8 @@
 all: doc/taracyc_report.md
 
 # Read Data from URL
-data/taracyc_data.csv: $(https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt) src/taracyc_data_load.R
-	Rscript src/taracyc_data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/taracyc_data.csv
+data/taracyc_data.csv: $(https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt) src/taracyc_data_load.R
+	Rscript src/taracyc_data_load.R https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt data/taracyc_data.csv
 		$(info Loading Data)
 
 # Making Plots
