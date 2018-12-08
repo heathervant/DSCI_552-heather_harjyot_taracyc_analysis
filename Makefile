@@ -12,26 +12,28 @@
 
 # Run all scripts
 
+
+
 all: doc/taracyc_report.md
 
 # Read Data from URL
-data/taracyc_data.csv: $(https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt) src/taracyc_data_load.R
-	Rscript src/taracyc_data_load.R https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt data/taracyc_data.csv
+data/taracyc_data.csv: src/taracyc_data_load.R $(https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt)
+	Rscript src/taracyc_data_load.R https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt $@
 		$(info Loading Data)
 
 # Making Plots
-data/taracyc_data_cleaned.csv results/figures: src/taracyc_data_explore_clean.R data/taracyc_data.csv
-	Rscript src/taracyc_data_explore_clean.R data/taracyc_data.csv results/figures data/taracyc_data_cleaned.csv
+results/figures data/taracyc_data_cleaned.csv : src/taracyc_data_explore_clean.R data/taracyc_data.csv
+	Rscript $^ results/figures $@
 	 	$(info Creating EDA Plots and Cleaning Data)
 
 #  Running Analysis
-results/taracyc_results.csv: data/taracyc_data_cleaned.csv src/taracyc_data_analysis.R
-	Rscript src/taracyc_data_analysis.R data/taracyc_data_cleaned.csv results/taracyc_results.csv
+results/taracyc_results.csv: src/taracyc_data_analysis.R data/taracyc_data_cleaned.csv
+	Rscript $^ $@
 		$(info Running Analysis)
 
 # Summarizing Results
 results/figures/fig7_results.png: src/taracyc_results.R data/taracyc_data_cleaned.csv
-	Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/fig7_results.png
+	Rscript $^ $@
 	 	$(info Summarizing Results)
 
 # Making Report
