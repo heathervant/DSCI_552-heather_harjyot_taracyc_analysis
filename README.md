@@ -74,7 +74,7 @@ docker run --rm -e PASSWORD=test -v PATH_ON_YOUR_COMPUTER:/home/rstudio/taracyc_
 
 Link: [Dockerfile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/Dockerfile)
 
-#### Method 2: Using Makefile
+#### Method 2: Using Make
 
 1. Use the command line to navigate to the root of this project directory
 
@@ -92,6 +92,10 @@ make clean
 
 Link: [Makefile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/Makefile)
 
+#### Dependency diagram of the Makefile
+
+![](Makefile.png)
+
 #### Method 3: Shell Script
 
 1. Use the command line to navigate to the root of this project directory
@@ -103,23 +107,27 @@ bash run_all.sh
 ```
 Link: [Shell Script](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/run_all.sh) `run_all.sh`
 
-#### Method 4: Running reports from the the command line
+## Detailed WorkFlow
 
-1. Use the command line to navigate to the root of this project directory
+#### Step 1: Data Load   
 
-2. Run the following commands:
+The first script `src/taracyc_data_load.R` runs and downloads the data from a URL and stores it in a csv `data/taracyc_data.csv`.
 
-```
-Rscript src/taracyc_data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/taracyc_data.csv
-Rscript src/taracyc_data_explore_clean.R data/taracyc_data.csv results/figures data/taracyc_data_cleaned.csv
-Rscript src/taracyc_data_analysis.R data/taracyc_data_cleaned.csv results/taracyc_results.csv
-Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/fig7_results.png
-Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
-```
+#### Step 2: Data Wrangling and Explanatory Data Analysis
 
-## Dependency Diagram
+The second script `src/taracyc_data_explore_clean.R` takes output of the first script and runs and explores data while simultaneously producing plots and cleaning data. It produces 5 plots that are stored in `results/figures data` as `.png` files. It also creates a csv `taracyc_data_cleaned.csv` with cleaned data.
 
-![](Makefile.png)
+#### Step 3: Data Analysis
+
+The third script `src/taracyc_data_analysis.R` takes output of the second script and runs a Two-Way Anova on the data and stores it in the csv `results/taracyc_results.csv`.
+
+#### Step 4: Compiling Results  
+
+The fourth script `src/taracyc_results.R` takes output of the second script and produces a visual representation of the Two-Way Anova and stores it in `results/figures/fig7_results.png`
+
+#### Step 5: Creating Report
+
+The report compiled in `doc/taracyc_report.Rmd` is rendered as a `markdown` and `html` file and stored in `doc/` folder.
 
 ## Dependencies
 
