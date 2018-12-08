@@ -1,0 +1,29 @@
+digraph G {
+n2[label="all", color="red"];
+n7[label="data/taracyc_data.csv", color="green"];
+n5[label="data/taracyc_data_cleaned.csv", color="green"];
+n4[label="doc/taracyc_report.Rmd", color="green"];
+n3[label="doc/taracyc_report.md", color="green"];
+n9[label="results/figures", color="green"];
+n12[label="results/figures/fig7_results.png", color="green"];
+n10[label="results/taracyc_results.csv", color="green"];
+n11[label="src/taracyc_data_analysis.R", color="green"];
+n6[label="src/taracyc_data_explore_clean.R", color="green"];
+n8[label="src/taracyc_data_load.R", color="green"];
+n13[label="src/taracyc_results.R", color="green"];
+n3 -> n2 ; 
+n8 -> n7 ; 
+n7 -> n5 ; 
+n6 -> n5 ; 
+n5 -> n3 ; 
+n4 -> n3 ; 
+n9 -> n3 ; 
+n12 -> n3 ; 
+n10 -> n3 ; 
+n7 -> n9 ; 
+n6 -> n9 ; 
+n5 -> n12 ; 
+n13 -> n12 ; 
+n5 -> n10 ; 
+n11 -> n10 ; 
+}
