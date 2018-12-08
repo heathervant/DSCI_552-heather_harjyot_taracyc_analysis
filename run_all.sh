@@ -9,7 +9,7 @@
 
 # Read Data from URL
 echo "Loading Data"
-Rscript src/taracyc_data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/taracyc_data.csv
+Rscript src/taracyc_data_load.R https://raw.githubusercontent.com/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERDATA.txt data/taracyc_data.csv
 wait $!
 
 # Making Plots
