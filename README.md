@@ -2,7 +2,7 @@
 ## Viral Voyager: Taracyc Ocean Virus Analysis
 -----------------------------------------------------------------------------------
 
-![](img/tara_logo1.PNG)
+![](img/tara_logo1.png)
 
 Authors
 
@@ -119,7 +119,7 @@ Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
 
 ## Dependency Diagram
 
-![](Makefile.PNG)
+![](Makefile.png)
 
 ## Dependencies
 
