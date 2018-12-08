@@ -10,20 +10,21 @@ Authors
 |---|---|
 | Harjyot Kaur | [HarjyotKaur](https://github.com/HarjyotKaur) |
 | Heather Van Tassel | [heathervant](https://github.com/heathervant) |
-
 <br>
 
 ## Overview
 
 One of the most promising places to sequester carbon is in the oceans. The ocean plays a vital dominant role in oxygen production, weather patterns, climate and the global carbon cycle. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. There are viruses that can infect bacteria and alter their chance of survival.
+<br>
 
 ## Motivation for research
 In 2009, a 3-year voyage around the world began, to collect more information about our precious oceans. The project was led by the [TARA oceans project]('http://ocean-microbiome.embl.de/companion.html') and resulted in the collection of 300 water samples, involving over 150 Scientists who are curious about the biodiversity and distribution of micro-organisms in the oceans. The Hallam lab at UBC has taken these genetic sequences from the viruses and bacteria and created a complex algorithm that classifies the DNA sequences into biological pathways that these genes may be involved in regulating. A team of students and researchers took this dataset and made a [shiny app](http://oganm.com/shiny/taracyc/) to help the public interact with and explore the data at the University of British Columbia's [hackseq 2018](https://github.com/hackseq/tara-cyc-hs18/wiki). Many questions are waiting to be explored with this dataset, to help characterize genetic diversity of the ocean, and make inferences about how bacteria and viruses interact and how they might be altered by changing climates.
-
+<br>
 
 ## Research Question
 
 Does the mean abundance of viral DNA sequences differ across biological pathways? Does the mean abundance of viral DNA sequences differ across ocean depth levels? Does the mean abundance of viral DNA sequences of the biological pathways differ across ocean depth levels?
+<br>
 
 ## Analysis Overview
 
@@ -34,9 +35,9 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depth |
-<br>
 
 A detailed report of the analysis is available [here](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/doc/taracyc_report.md).
+<br>
 
 ## Usage
 
@@ -106,6 +107,7 @@ Link: [Makefile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/ma
 bash run_all.sh
 ```
 Link: [Shell Script](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/run_all.sh) `run_all.sh`
+<br>
 
 ## Detailed WorkFlow
 
@@ -128,6 +130,7 @@ The fourth script `src/taracyc_results.R` takes output of the second script and 
 #### Step 5: Creating Report
 
 The report compiled in `doc/taracyc_report.Rmd` is rendered as a `markdown` and `html` file and stored in `doc/` folder.
+<br>
 
 ## Dependencies
 
