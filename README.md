@@ -10,20 +10,21 @@ Authors
 |---|---|
 | Harjyot Kaur | [HarjyotKaur](https://github.com/HarjyotKaur) |
 | Heather Van Tassel | [heathervant](https://github.com/heathervant) |
-
 <br>
 
 ## Overview
 
 One of the most promising places to sequester carbon is in the oceans. The ocean plays a vital dominant role in oxygen production, weather patterns, climate and the global carbon cycle. Cyanobacteria in the oceans digest carbon, and when the bacteria die, this carbon sinks to the bottom of the ocean, thereby sequestering it from our atmosphere. There are viruses that can infect bacteria and alter their chance of survival.
+<br>
 
 ## Motivation for research
 In 2009, a 3-year voyage around the world began, to collect more information about our precious oceans. The project was led by the [TARA oceans project]('http://ocean-microbiome.embl.de/companion.html') and resulted in the collection of 300 water samples, involving over 150 Scientists who are curious about the biodiversity and distribution of micro-organisms in the oceans. The Hallam lab at UBC has taken these genetic sequences from the viruses and bacteria and created a complex algorithm that classifies the DNA sequences into biological pathways that these genes may be involved in regulating. A team of students and researchers took this dataset and made a [shiny app](http://oganm.com/shiny/taracyc/) to help the public interact with and explore the data at the University of British Columbia's [hackseq 2018](https://github.com/hackseq/tara-cyc-hs18/wiki). Many questions are waiting to be explored with this dataset, to help characterize genetic diversity of the ocean, and make inferences about how bacteria and viruses interact and how they might be altered by changing climates.
-
+<br>
 
 ## Research Question
 
 Does the mean abundance of viral DNA sequences differ across biological pathways? Does the mean abundance of viral DNA sequences differ across ocean depth levels? Does the mean abundance of viral DNA sequences of the biological pathways differ across ocean depth levels?
+<br>
 
 ## Analysis Overview
 
@@ -34,9 +35,9 @@ The goal is to carry out a Two-Way ANOVA (Factorial Analysis) to compare the mai
 | RKPM | Continuous | Reads per kilobase of transcript per million mapped reads |
 | LEVEL1 | Categorical | Biological Pathways |
 | Depth | Categorical |  Levels of ocean depth |
-<br>
 
 A detailed report of the analysis is available [here](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/doc/taracyc_report.md).
+<br>
 
 ## Usage
 
@@ -74,7 +75,7 @@ docker run --rm -e PASSWORD=test -v PATH_ON_YOUR_COMPUTER:/home/rstudio/taracyc_
 
 Link: [Dockerfile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/Dockerfile)
 
-#### Method 2: Using Makefile
+#### Method 2: Using Make
 
 1. Use the command line to navigate to the root of this project directory
 
@@ -92,6 +93,10 @@ make clean
 
 Link: [Makefile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/Makefile)
 
+#### Dependency diagram of the Makefile
+
+![](Makefile.png)
+
 #### Method 3: Shell Script
 
 1. Use the command line to navigate to the root of this project directory
@@ -102,24 +107,30 @@ Link: [Makefile](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/ma
 bash run_all.sh
 ```
 Link: [Shell Script](https://github.com/UBC-MDS/Taracyc_Ocean_Virus_Analysis/blob/master/run_all.sh) `run_all.sh`
+<br>
 
-#### Method 4: Running reports from the the command line
+## Detailed WorkFlow
 
-1. Use the command line to navigate to the root of this project directory
+#### Step 1: Data Load   
 
-2. Run the following commands:
+The first script `src/taracyc_data_load.R` runs and downloads the data from a URL and stores it in a csv `data/taracyc_data.csv`.
 
-```
-Rscript src/taracyc_data_load.R https://media.githubusercontent.com/media/HarjyotKaur/Data_Taracyc_Analysis/master/data/MASTERTABLE.txt data/taracyc_data.csv
-Rscript src/taracyc_data_explore_clean.R data/taracyc_data.csv results/figures data/taracyc_data_cleaned.csv
-Rscript src/taracyc_data_analysis.R data/taracyc_data_cleaned.csv results/taracyc_results.csv
-Rscript src/taracyc_results.R data/taracyc_data_cleaned.csv results/figures/fig7_results.png
-Rscript -e "rmarkdown::render('doc/taracyc_report.Rmd')"
-```
+#### Step 2: Data Wrangling and Explanatory Data Analysis
 
-## Dependency Diagram
+The second script `src/taracyc_data_explore_clean.R` takes output of the first script and runs and explores data while simultaneously producing plots and cleaning data. It produces 5 plots that are stored in `results/figures data` as `.png` files. It also creates a csv `taracyc_data_cleaned.csv` with cleaned data.
 
-![](Makefile.png)
+#### Step 3: Data Analysis
+
+The third script `src/taracyc_data_analysis.R` takes output of the second script and runs a Two-Way Anova on the data and stores it in the csv `results/taracyc_results.csv`.
+
+#### Step 4: Compiling Results  
+
+The fourth script `src/taracyc_results.R` takes output of the second script and produces a visual representation of the Two-Way Anova and stores it in `results/figures/fig7_results.png`
+
+#### Step 5: Creating Report
+
+The report compiled in `doc/taracyc_report.Rmd` is rendered as a `markdown` and `html` file and stored in `doc/` folder.
+<br>
 
 ## Dependencies
 
